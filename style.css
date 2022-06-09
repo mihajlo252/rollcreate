@@ -24,7 +24,7 @@ body, html {
     background-color: var(--color-background);
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), 
                     rgba(0, 0, 0, 0.5)), 
-                      url("background-image.jpg");
+                      url("assets/images/background-image.jpg");
     background-position: 55% 50%;
     background-size: cover;
     overflow-x: hidden;
@@ -157,7 +157,7 @@ nav {
     .mobile-nav-toggle {
         display: block;
         z-index: 9999;
-        background: url("hamburger-menu.svg");
+        background: url("assets/svg/hamburger-menu.svg");
         background-repeat: no-repeat;
         width: 1.5rem;
         border: 0;
@@ -170,7 +170,7 @@ nav {
 
     .mobile-nav-toggle:hover {
         z-index: 9999;
-        background: url("hamburger-menu-hover.svg");
+        background: url("assets/svg/hamburger-menu-hover.svg");
         background-repeat: no-repeat;
         cursor: pointer;
     }
