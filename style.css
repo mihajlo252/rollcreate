@@ -59,7 +59,7 @@ nav {
     position: relative;
     top: 0;
     left: 0;
-    height: 2.5rem;
+    height: 3rem;
 }
 
 .mobile-nav-toggle {
@@ -91,12 +91,11 @@ nav {
     z-index: 100;
     position: relative;
     top: 13%;
-    margin-inline: 8%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 17rem;
+    gap: var(--gap, 17rem);
 }
 
 .hero-text {
@@ -104,12 +103,12 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .hero-text > h1 {
     color: var(--color-primary);
     font-size: 2.6rem;
-    text-align: center;
     line-height: 1.5ch;
     width: 24rem;
 }
@@ -118,7 +117,6 @@ nav {
     color: var(--color-white);
     font-size: 1.2rem;
     font-weight: 300;
-    text-align: center;
     letter-spacing: .3ch;
     line-height: 2.1ch;
     width: 24rem;
@@ -267,12 +265,41 @@ button::before {
 @media (min-width: 750px){
     .logo {
         height: 3.5rem;
-        margin-left: 4rem;
+        margin-left: clamp(2rem, 4vw, 4rem);
     }
 
     .nav-controls {
-        margin-right: 4rem;
+        margin-right: clamp(1rem, 2vw, 4rem);
     }
+
+    .hero {
+        --gap: 23rem;
+        align-items: flex-start;
+        margin: 0 clamp(2rem, 8vw, 10rem);
+    }
+
+    .hero-text {
+        align-items: flex-start;
+        text-align:start;
+    }
+
+    .hero-text > h1 {
+        font-size: clamp(2.6rem, 6vw, 4rem);
+        line-height: 1.5ch;
+        width: 50rem;
+    }
+    
+    .hero-text > p {
+        font-size: clamp(1.4rem, 2.5vw, 1.6rem);
+        letter-spacing: .3ch;
+        line-height: 2.1ch;
+        width: clamp(28rem, 50vw, 32rem);
+    }
+
+    .create-character {
+        align-self: center;
+    }
+
 }
 
 
