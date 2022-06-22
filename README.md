@@ -1,2 +1,2 @@
-# DnD_character_creator_v2
-Revamp of the first dnd character creator
+# RollCreate
+Web application in which the user can create their own character in the D&D universe
