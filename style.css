@@ -1,8 +1,8 @@
 :root {
-    --color-primary: #F1C321;
+    --color-primary: #FCEAA0;
     --color-black: #2d2d2e;
     --color-white: #F1F1F1;
-    --color-accent: #A53327;
+    --color-accent: #0f2726;
     --color-background: #110F05;
     
     --animation-length: 250ms;
@@ -24,10 +24,18 @@ body, html {
     font-family: 'K2D', sans-serif;
     background-repeat: no-repeat;
     background-color: var(--color-background);
-    background-image: url("assets/images/background-dragon_dark.png");
+    background-image: url("assets/images/background-soldier-portrait.png");
     background-position: 55% 50%;
     background-size: cover;
     overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .4);
 }
 
 
@@ -80,7 +88,7 @@ nav {
 }
 
 .list-item:hover {
-    color: var(--color-accent);
+    color: var(--color-white);
 }
 
 /* hero styles */
@@ -220,7 +228,7 @@ button::before {
     
 
     .nav-toggle-closed {
-        background: url("assets/svg/hamburger-menu-close-hover.svg");
+        background: url("assets/svg/hamburger-menu-close.svg");
         background-repeat: no-repeat;
         background-position: center;
         height: 1.5rem;
@@ -263,7 +271,7 @@ button::before {
 
 @media (min-width: 750px){
     .logo {
-        height: 3.5rem;
+        height: 4.5rem;
         margin-left: clamp(2rem, 4vw, 4rem);
     }
 
