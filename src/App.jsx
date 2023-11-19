@@ -9,14 +9,14 @@ import "./App.css";
 // Components
 import { Home } from "./routes/Home";
 import { Root } from "./layout/Root";
-import { Navigation } from "./components/Navigation";
+import { Characters } from "./routes/Characters";
 
 function App() {
 	const router = createHashRouter(
 		createRoutesFromElements([
 			<Route path="/" element={<Root />}>
 				<Route index element={<Home />} />
-				<Route path="nav" element={<Navigation />} />
+				<Route path="/characters" element={<Characters />} />
 			</Route>
 		])
 	);

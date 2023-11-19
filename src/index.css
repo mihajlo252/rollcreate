@@ -2,14 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-#root {
-  min-height: 100dvh;
-  width: 100dvw;
+:root {
+  box-sizing: border-box;
 }
 
 body {
   position: relative;
   margin: 0;
+  padding: 0;
 	min-height: 100%;
   font-family: 'K2D', sans-serif;
 }
@@ -24,4 +24,8 @@ body:after {
   background-attachment: fixed;
   filter: brightness(0.6);
   z-index: -2;
+}
+
+#root {
+  min-height: 100dvh;
 }

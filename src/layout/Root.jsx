@@ -1,12 +1,14 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { Logo } from "../components/Logo";
+import { Navigation } from "../components/Navigation/Navigation";
 
 export const Root = () => {
 	return (
 		<>
-			<Logo />
-			<Outlet />
+			<Navigation />
+			<div className="px-[12rem] min-h-screen min-h-[100dvh] pt-10">
+				<Outlet />
+			</div>
 		</>
 	);
 };
