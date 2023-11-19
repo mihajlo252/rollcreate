@@ -1,7 +1,7 @@
 import {
 	Route,
 	RouterProvider,
-	createBrowserRouter,
+	createHashRouter,
 	createRoutesFromElements,
 } from "react-router-dom";
 import "./App.css";
@@ -13,10 +13,9 @@ import { Navigation } from "./components/Navigation";
 import { Logo } from "./components/Logo";
 
 function App() {
-	const router = createBrowserRouter(
+	const router = createHashRouter(
 		createRoutesFromElements([
-			// <Route path="/" element={<Root />}>
-			<Route>
+			<Route path="/" element={<Root />}>
 				<Route index element={<Home />} />
 				<Route path="nav" element={<Navigation />} />
 			</Route>
