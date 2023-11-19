@@ -9,13 +9,17 @@ import "./App.css";
 // Components
 import { Home } from "./routes/Home";
 import { Root } from "./layout/Root";
+import { Navigation } from "./components/Navigation";
+import { Logo } from "./components/Logo";
 
 function App() {
 	const router = createBrowserRouter(
 		createRoutesFromElements([
-			<Route path="/" element={<Root />}>
+			// <Route path="/" element={<Root />}>
+			<Route>
 				<Route index element={<Home />} />
-			</Route>,
+				<Route path="nav" element={<Navigation />} />
+			</Route>
 		])
 	);
 
