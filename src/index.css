@@ -13,11 +13,12 @@ body {
 	min-height: 100%;
   font-family: 'K2D', sans-serif;
 }
+
 body:after {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('assets/images/background-soldier-portrait.png');
+  background-image: url('./public/assets/images/background-soldier-portrait.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

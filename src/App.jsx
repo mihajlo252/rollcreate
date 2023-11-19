@@ -10,7 +10,6 @@ import "./App.css";
 import { Home } from "./routes/Home";
 import { Root } from "./layout/Root";
 import { Navigation } from "./components/Navigation";
-import { Logo } from "./components/Logo";
 
 function App() {
 	const router = createHashRouter(
