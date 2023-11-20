@@ -10,6 +10,8 @@ import "./App.css";
 import { Home } from "./routes/Home";
 import { Root } from "./layout/Root";
 import { Characters } from "./routes/Characters";
+import { Create } from "./routes/Create";
+import { Campaigns } from "./routes/Campaigns";
 
 function App() {
 	const router = createHashRouter(
@@ -17,6 +19,8 @@ function App() {
 			<Route path="/" element={<Root />}>
 				<Route index element={<Home />} />
 				<Route path="/characters" element={<Characters />} />
+				<Route path="/create" element={<Create />} />
+				<Route path="/campaigns" element={<Campaigns />} />
 			</Route>
 		])
 	);

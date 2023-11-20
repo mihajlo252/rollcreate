@@ -1,0 +1,16 @@
+.nav_list {
+  @apply bg-base-100 bg-opacity-40 backdrop-blur-sm;
+  border-radius: 10px;
+}
+
+.nav_link {
+  --transition: 150ms ease-in-out;
+  padding-inline: 2rem;
+  padding-block: .5rem;
+  border-radius: 10px;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.nav_link:hover {
+  @apply bg-secondary bg-opacity-70 text-neutral
+}
