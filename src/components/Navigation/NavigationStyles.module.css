@@ -4,6 +4,7 @@
 }
 
 .nav_link {
+  position: relative;
   --transition: 150ms ease-in-out;
   padding-inline: 2rem;
   padding-block: .5rem;
@@ -11,6 +12,42 @@
   transition: background-color var(--transition), color var(--transition);
 }
 
-.nav_link:hover {
-  @apply bg-secondary bg-opacity-70 text-neutral
+.nav_link::after {
+  @apply border-b-[1px] border-primary;
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--transition);
+  z-index: -1;
 }
+.nav_link::before {
+  @apply bg-primary;
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform var(--transition);
+  z-index: -1;
+}
+
+.nav_link:hover::after {
+  transform: scaleX(1);
+}
+
+.nav_link[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+.nav_link[aria-current="page"]::before {
+  transform: scaleX(1);
+}
+
+.nav_link[aria-current="page"] {
+  @apply text-neutral-content;
+}
+
