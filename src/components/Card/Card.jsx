@@ -1,15 +1,15 @@
 import React from "react";
 
 export const Card = ({ campaign }) => {
-	console.log(campaign);
-	const { name, description, date, author } = campaign;
+	const { campaign_name, meta_data, featured, created_at } = campaign;
 
 	return (
 		<div className="flex flex-col">
-			<p>{name}</p>
-			<p>{description}</p>
-			<p>{date}</p>
-			<p>{author}</p>
+			<p>{campaign_name}</p>
+			<p>{meta_data.type}</p>
+			<p>{meta_data.players}</p>
+			<p>{featured ? "Featured" : "Not featured"}</p>
+			<p>{created_at}</p>
 		</div>
 	);
 };

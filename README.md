@@ -9,18 +9,13 @@ new link: https://mihajlo252.github.io/rollcreate
 
 # Credits
 
-  API for D&D5e - https://www.dnd5eapi.co/
-
-
+  Data for D&D 5e - https://github.com/5e-bits/5e-database
 
 # TODO:
 
 - ~~Top navigation~~
-- Make json files for race, class, background, languages, proficiencies and feats (just some basic stuff)
-- Race
-- Class
-- Background
-- Ability Scores
-- Languages
-- Proficiencies
-- Feats
+- ~~Make json files for race, class, background, languages, proficiencies and feats (just some basic stuff)~~
+- Campaigns
+- Cards
+- Character
+- Create
