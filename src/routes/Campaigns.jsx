@@ -37,12 +37,10 @@ export const Campaigns = () => {
 				</option>
 			</select>
 
+			<h2 className="text-5xl text-primary font-semibold">
+				{filter == "featured" ? "Featured" : "All"} Campaigns
+			</h2>
 			<div className="grid grid-cols-4 gap-5">
-
-				<h2 className="text-5xl text-primary font-semibold">
-					{filter == "featured" ? "Featured" : "All"} Campaigns
-				</h2>
-
 				{campaigns.map((campaign) =>
 					filter == "featured" ? (
 						campaign.featured && <Card key={campaign.id} campaign={campaign} />
