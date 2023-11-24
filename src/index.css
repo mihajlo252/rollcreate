@@ -16,7 +16,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  /* background-position: 40% 0; */
+  background-position: center;
 }
 
 @media (max-width: 768px) {
