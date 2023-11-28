@@ -7,21 +7,20 @@
 }
 
 body {
+  --gradient: linear-gradient(
+    25deg, #0A1E1D, #060D0E 35%
+  );
   position: relative;
   margin: 0;
   padding: 0;
 	min-height: 100dvh;
   font-family: 'K2D', sans-serif;
-  background-image: url('/assets/images/background-soldier-portrait.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
+  background-image: var(--gradient);
 }
 
 @media (max-width: 768px) {
   body {
-    background-attachment: scroll;
+    background-position: 45% top;
   }
 }
 

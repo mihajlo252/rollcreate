@@ -1,0 +1,12 @@
+.card {
+  animation: fade-in ease-in-out 1s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
