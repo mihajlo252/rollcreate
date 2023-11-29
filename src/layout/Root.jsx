@@ -7,7 +7,7 @@ export const Root = () => {
 	return (
 		<div className="">
 			<Navigation />
-			<div className="px-[12rem] mt-20 min-h-[100dvh] relative max-[600px]:px-[2rem]">
+			<div className="px-[12rem] my-36 min-h-[100dvh] relative max-[600px]:px-[2rem]">
 				<Outlet />
 			</div>
 			<Footer />

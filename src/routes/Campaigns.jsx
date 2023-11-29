@@ -22,20 +22,6 @@ export const Campaigns = () => {
 	return (
 		<main className="flex flex-col gap-20">
 			<Filter options={["all", "featured"]} setFilter={setFilter} setCampaigns={setCampaigns}/>
-			{/* <select
-				name="filter"
-				id=""
-				onChange={(e) => {
-					handleFilter(e.target.value);
-				}}
-			>
-				<option value="all" name="filter" defaultChecked>
-					All
-				</option>
-				<option value="featured" name="filter">
-					Featured
-				</option>
-			</select> */}
 
 			<h2 className="text-5xl text-primary font-semibold">
 				{filter == "featured" ? "Featured" : "All"} Campaigns
@@ -49,7 +35,7 @@ export const Campaigns = () => {
 					</>
 				) : (
 					<>
-					{campaigns.map((campaign, idx) =>
+					{campaigns.map((campaign) =>
 						filter == "featured" ? (
 							(campaign.featured) && <Card key={campaign.id} campaign={campaign} />
 						) : (

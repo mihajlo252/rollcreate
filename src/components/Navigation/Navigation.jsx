@@ -17,6 +17,11 @@ export const Navigation = () => {
 						</NavLink>
 					</li>
 					<li>
+						<NavLink to="/login" className={NavigationStyles.nav_link}>
+							Register
+						</NavLink>
+					</li>
+					<li>
 						<NavLink to="/characters" className={NavigationStyles.nav_link}>
 							Characters
 						</NavLink>
