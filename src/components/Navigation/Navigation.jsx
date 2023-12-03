@@ -2,23 +2,17 @@ import React from "react";
 import { Logo } from "../Logo";
 import { NavLink } from "react-router-dom";
 import NavigationStyles from "./NavigationStyles.module.css";
+import { Profile } from "../Profile/Profile";
 
 export const Navigation = () => {
-	const screenWidth = window.innerWidth;
-
 	return (
-		<header className="grid grid-cols-2 px-20 py-5 max-[600px]:px-5">
+		<header className="flex flex-row justify-between items-center text-center px-20 py-5 max-[600px]:px-5">
 			<Logo />
 			<nav className="place-self-end">
 				<ul className={`flex text-[1.2rem] text-primary ${NavigationStyles.nav_list}`}>
 					<li>
 						<NavLink to="/" className={NavigationStyles.nav_link}>
 							Home
-						</NavLink>
-					</li>
-					<li>
-						<NavLink to="/login" className={NavigationStyles.nav_link}>
-							Register
 						</NavLink>
 					</li>
 					<li>
@@ -38,6 +32,7 @@ export const Navigation = () => {
 					</li>
 				</ul>
 			</nav>
+			<Profile />
 		</header>
 	);
 };
