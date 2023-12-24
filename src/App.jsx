@@ -9,7 +9,7 @@ import "./App.css";
 // Components
 import { Home } from "./routes/Home";
 import { Root } from "./layout/Root";
-import { Characters } from "./routes/Characters";
+import { Profile } from "./routes/Profile";
 import { Create } from "./routes/Create";
 import { Campaigns } from "./routes/Campaigns";
 import { SignUp } from "./routes/SignUp";
@@ -20,7 +20,7 @@ function App() {
 		createRoutesFromElements([
 			<Route path="/" element={<Root />}>
 				<Route index element={<Home />} />
-				<Route path="/characters" element={<Characters />} />
+				<Route path="/profile" element={<Profile />} />
 				<Route path="/create" element={<Create />} />
 				<Route path="/campaigns" element={<Campaigns />} />
 				<Route path="/signup" element={<SignUp />} />

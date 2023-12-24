@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form } from "react-router-dom";
-import { signUpNewUser } from "../utilities/SignUpNewUser";
+import { signUpNewUser } from "../utilities/signUpNewUser";
 
 export const SignUp = () => {
 	const [email, setEmail] = useState("");

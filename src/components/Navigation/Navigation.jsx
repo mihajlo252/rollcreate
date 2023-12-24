@@ -2,7 +2,8 @@ import React from "react";
 import { Logo } from "../Logo";
 import { NavLink } from "react-router-dom";
 import NavigationStyles from "./NavigationStyles.module.css";
-import { Profile } from "../Profile/Profile";
+import { UserAccessGroup } from "../UserAccessGroup/UserAccessGroup";
+
 
 export const Navigation = () => {
 	return (
@@ -13,11 +14,6 @@ export const Navigation = () => {
 					<li>
 						<NavLink to="/" className={NavigationStyles.nav_link}>
 							Home
-						</NavLink>
-					</li>
-					<li>
-						<NavLink to="/characters" className={NavigationStyles.nav_link}>
-							Characters
 						</NavLink>
 					</li>
 					<li>
@@ -32,7 +28,8 @@ export const Navigation = () => {
 					</li>
 				</ul>
 			</nav>
-			<Profile />
+			<UserAccessGroup />
+
 		</header>
 	);
 };

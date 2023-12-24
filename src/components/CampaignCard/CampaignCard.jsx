@@ -1,7 +1,7 @@
 import React from "react";
-import CardStyles from "./CardStyles.module.css";
+import CardStyles from "./CampaignCardStyles.module.css";
 
-export const Card = ({ campaign }) => {
+export const CampaignCard = ({ campaign }) => {
 	const { campaign_name, meta_data, featured, created_at } = campaign;
 
 	return (

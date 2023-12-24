@@ -1,16 +1,12 @@
-import React, { useState } from 'react'
-import { GetAllCampaigns } from '../../utilities/GetAllCampaigns';
-
-
-
+import React from 'react'
+import { getAllData } from '../../utilities/getAllData';
 
 export const Filter = ({options, setFilter, setCampaigns}) => {
-
 
 	const handleFilter = async (target) => {
 		
 		setFilter(target);
-		const res = await GetAllCampaigns();
+		const res = await getAllData();
 		setCampaigns(res.data);
 	};
 

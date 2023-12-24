@@ -10,5 +10,4 @@ export async function signUpNewUser(email, password, username) {
 			},
 		},
 	});
-	console.log(data, error);
 }

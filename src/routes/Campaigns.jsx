@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Card } from "../components/Card/Card";
-import { GetAllCampaigns } from "../utilities/GetAllCampaigns";
+import { getAllData } from "../utilities/getAllData";
+
 import { Filter } from "../components/Filter/Filter";
 import { SkeletonCard } from "../components/SkeletonCard/SkeletonCard";
+import { CampaignCard } from "../components/CampaignCard/CampaignCard";
 
 export const Campaigns = () => {
 	const [campaigns, setCampaigns] = useState([]);
@@ -10,7 +11,7 @@ export const Campaigns = () => {
 	const [isLoading, setIsLoading] = useState(true);
 
 	const handleGetAllCampaigns = async () => {
-		const res = await GetAllCampaigns();
+		const res = await getAllData("campaigns");
 		setCampaigns(res.data);
 		setIsLoading(false);
 	};
@@ -39,7 +40,7 @@ export const Campaigns = () => {
 						filter == "featured" ? (
 							(campaign.featured) && <Card key={campaign.id} campaign={campaign} />
 						) : (
-							<Card key={campaign.id} campaign={campaign} />
+							<CampaignCard key={campaign.id} campaign={campaign} />
 						)
 					)}
 					</>

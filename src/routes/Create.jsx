@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { GetData } from '../utilities/GetData'
+import { getData } from '../utilities/getData'
 
 export const Create = () => {
   
@@ -7,7 +7,7 @@ export const Create = () => {
 
   const handleGetClasses = async () => {
     const type_of_file = 'Classes'
-    const res = await GetData(type_of_file)
+    const res = await getData(type_of_file)
     setClasses(res)
   }
 
