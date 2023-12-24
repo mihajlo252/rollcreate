@@ -1,0 +1,32 @@
+.card {
+  display: grid;
+  grid-template-columns: 0.3fr 1fr;
+}
+
+.char_name {
+  position: relative;
+}
+
+.char_name::after {
+  @apply bg-neutral;
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 3px;
+  left: -10px;
+}
+
+.main_traits {
+  @apply text-neutral;
+  position: relative;
+}
+
+.main_traits::after {
+  @apply bg-neutral;
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  top: 50%;
+  border-radius: 100vh;
+}
