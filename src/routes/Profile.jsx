@@ -26,7 +26,7 @@ export const Profile = () => {
 	};
 
 	useEffect(() => {
-		if (!userData?.user) {
+		if (!userData) {
 			navigate("/");
 			return;
 		}
