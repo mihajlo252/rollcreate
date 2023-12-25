@@ -4,12 +4,11 @@ import { NavLink } from "react-router-dom";
 import NavigationStyles from "./NavigationStyles.module.css";
 import { UserAccessGroup } from "../UserAccessGroup/UserAccessGroup";
 
-
 export const Navigation = () => {
 	return (
-		<header className="flex flex-row justify-between items-center text-center px-20 py-5 max-[600px]:px-5">
+		<header className="flex flex-row justify-between items-center text-center px-20 py-7 max-[600px]:px-5">
 			<Logo />
-			<nav className="place-self-end">
+			<nav>
 				<ul className={`flex text-[1.2rem] text-primary ${NavigationStyles.nav_list}`}>
 					<li>
 						<NavLink to="/" className={NavigationStyles.nav_link}>
@@ -29,7 +28,6 @@ export const Navigation = () => {
 				</ul>
 			</nav>
 			<UserAccessGroup />
-
 		</header>
 	);
 };
