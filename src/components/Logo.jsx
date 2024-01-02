@@ -1,13 +1,16 @@
-import React from 'react'
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 export const Logo = () => {
-  return (
+	return (
 		<div className="left-20 top-10">
-    <img
-      className="w-24"
-      src="assets/images/ai-image-logo-rollcreate.png"
-      alt="Rollcreate logo"
-    />
-  </div>
-  )
-}
+			<NavLink to="/">
+				<img
+					className="w-24"
+					src="assets/images/ai-image-logo-rollcreate.png"
+					alt="Rollcreate logo"
+				/>
+			</NavLink>
+		</div>
+	);
+};
