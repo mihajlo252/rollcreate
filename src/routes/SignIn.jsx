@@ -7,6 +7,7 @@ import { login } from "../redux/user";
 export const SignIn = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [badLogin, setBadLogin] = useState(false);
 
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
@@ -14,9 +15,14 @@ export const SignIn = () => {
 	const handleSignIn = async (event) => {
 		event.preventDefault();
 		if (email === "" || password === "") return;
-		const data = await signInUser(email, password);
+		const {data, error} = await signInUser(email, password);
+		if (error) {
+			setBadLogin(true);
+			return;
+		}
 		dispatch(login(data));
 		navigate("/");
+		setBadLogin(false);
 	};
 
 	return (
@@ -41,7 +47,6 @@ export const SignIn = () => {
 						onChange={(e) => setEmail(e.target.value)}
 						required
 						autoFocus
-						pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 						aria-label="email"
 						aria-required="true"
 						title="Must be a valid email address"
@@ -60,12 +65,12 @@ export const SignIn = () => {
 						required
 						minLength="8"
 						maxLength="20"
-						pattern="[a-z])"
 						title="Must contain at least one lowercase letter"
 						aria-label="password"
 						aria-required="true"
 					/>
 				</div>
+				{badLogin ? <p className="text-red-500">Invalid email or password</p> : null}
 			</div>
 			<button type="submit" className="btn btn-primary w-44">
 				Sign In

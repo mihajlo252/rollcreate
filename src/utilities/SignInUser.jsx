@@ -5,5 +5,5 @@ export async function signInUser(email, password) {
     email: email,
     password: password
   })
-  return data
+  return {data: data, error: error}
 }

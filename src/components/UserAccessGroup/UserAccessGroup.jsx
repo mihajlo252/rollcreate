@@ -30,7 +30,7 @@ export const UserAccessGroup = () => {
 		<div>
 			{isSignedIn ? (
 				<div className="flex gap-5">
-					<NavLink to="/profile" className="btn btn-ghost">{userData?.user.user_metadata.username}</NavLink>
+					<NavLink to="/profile" className="btn btn-ghost">{userData?.user?.user_metadata.username}</NavLink>
 					<button className="btn bg-neutral text-neutral-content btn-outline" onClick={handleSignOut}>Sign Out</button>
 				</div>
 			) : (
