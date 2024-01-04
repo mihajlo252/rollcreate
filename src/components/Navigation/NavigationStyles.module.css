@@ -1,5 +1,4 @@
 .nav_list {
-  @apply bg-base-100 bg-opacity-40 backdrop-blur-sm;
   border-radius: 10px;
 }
 

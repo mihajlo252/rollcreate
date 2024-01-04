@@ -8,7 +8,7 @@
 
 body {
   --gradient: linear-gradient(
-    25deg, #0A1E1D, #060D0E 35%
+    #14201e, #0E0D14 35%
   );
   position: relative;
   margin: 0;

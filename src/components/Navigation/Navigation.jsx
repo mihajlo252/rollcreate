@@ -6,7 +6,7 @@ import { UserAccessGroup } from "../UserAccessGroup/UserAccessGroup";
 
 export const Navigation = () => {
 	return (
-		<header className="flex flex-row justify-between items-center text-center px-20 py-7 max-[600px]:px-5">
+		<header className="flex flex-row justify-between items-center text-center px-20 py-7 max-[600px]:px-5 bg-black bg-opacity-30 backdrop-blur-sm">
 			<Logo />
 			<nav>
 				<ul className={`flex text-[1.2rem] text-primary ${NavigationStyles.nav_list}`}>
