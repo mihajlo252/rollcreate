@@ -3,27 +3,35 @@
 @tailwind utilities;
 
 :root {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-  --gradient: linear-gradient(
-    #14201e, #0E0D14 35%
-  );
-  position: relative;
-  margin: 0;
-  padding: 0;
-	min-height: 100dvh;
-  font-family: 'K2D', sans-serif;
-  background-image: var(--gradient);
-}
-
-@media (max-width: 768px) {
-  body {
-    background-position: 45% top;
-  }
+	position: relative;
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	font-family: "K2D", sans-serif;
+	background: #0e0d14;
 }
 
 #root {
-  min-height: 100vh;
+	min-height: 100vh;
+	background: url(/assets/images/background-dragon-dark-lg.png) no-repeat;
+	background-size: contain;
+}
+
+@media (max-width: 1200px) {
+	#root {
+		min-height: 100vh;
+		background: url(/assets/images/background-dragon-dark-md.png) no-repeat;
+		background-size: contain;
+	}
+}
+@media (max-width: 800px) {
+	#root {
+		min-height: 100vh;
+		background: url(/assets/images/background-dragon-dark-sm.png) no-repeat;
+		background-size: contain;
+	}
 }
