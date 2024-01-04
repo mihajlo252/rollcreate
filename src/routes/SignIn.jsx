@@ -21,7 +21,7 @@ export const SignIn = () => {
 			return;
 		}
 		dispatch(login(data));
-		navigate("/");
+		navigate("/profile");
 		setBadLogin(false);
 	};
 
