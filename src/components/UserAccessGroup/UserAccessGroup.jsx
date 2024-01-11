@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import UAGStyles from "./UserAccessGroupStyles.module.css";
 import { logout } from "../../redux/user";
 import { useDispatch, useSelector } from "react-redux";
-
+import { CgProfile } from "react-icons/cg";
 export const UserAccessGroup = () => {
 	const { userData } = useSelector((state) => state.userData);
 	const [isSignedIn, setIsSignedIn] = useState(false);
@@ -27,10 +27,10 @@ export const UserAccessGroup = () => {
 	}, [userData]);
 
 	return (
-		<div>
+		<>
 			{isSignedIn ? (
 				<div className="flex gap-5">
-					<NavLink to="/profile" className="btn btn-ghost">{userData?.user?.user_metadata.username}</NavLink>
+					<NavLink to="/profile" className={`btn btn-circle text-neutral bg-transparent border-transparent hover:border-transparent hover:bg-transparent ${UAGStyles.profile}`}><CgProfile size={35} /></NavLink>
 					<button className="btn bg-neutral text-neutral-content btn-outline" onClick={handleSignOut}>Sign Out</button>
 				</div>
 			) : (
@@ -47,6 +47,6 @@ export const UserAccessGroup = () => {
 					</li>
 				</ul>
 			)}
-		</div>
+		</>
 	);
 };

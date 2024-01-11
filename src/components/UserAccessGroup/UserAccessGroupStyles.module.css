@@ -1,0 +1,14 @@
+
+.profile[aria-current="page"] {
+  @apply text-primary;
+}
+
+.profile {
+  transform: scale(1);
+  transition: transform 150ms ease-in-out; 
+}
+
+.profile:hover {
+  @apply text-primary;
+  transform: scale(1.1);
+}
