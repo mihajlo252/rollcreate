@@ -7,7 +7,7 @@ import { CampaignCard } from "../components/CampaignCard/CampaignCard";
 
 export const Campaigns = () => {
 	const [campaigns, setCampaigns] = useState([]);
-	const [filter, setFilter] = useState("");
+	const [filter, setFilter] = useState("all");
 	const [isLoading, setIsLoading] = useState(true);
 
 	const handleGetAllCampaigns = async () => {
@@ -18,7 +18,7 @@ export const Campaigns = () => {
 
 	useEffect(() => {
 		handleGetAllCampaigns();
-	}, []);
+	}, [filter]);
 
 	return (
 		<main className="flex flex-col gap-20">
@@ -38,7 +38,7 @@ export const Campaigns = () => {
 					<>
 					{campaigns.map((campaign) =>
 						filter == "featured" ? (
-							(campaign.featured) && <Card key={campaign.id} campaign={campaign} />
+							(campaign.featured) && <CampaignCard key={campaign.id} campaign={campaign} />
 						) : (
 							<CampaignCard key={campaign.id} campaign={campaign} />
 						)
