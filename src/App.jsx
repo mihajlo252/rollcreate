@@ -15,6 +15,7 @@ import { Campaigns } from "./routes/Campaigns";
 import { SignUp } from "./routes/SignUp";
 import { SignIn } from "./routes/SignIn";
 import { Character } from "./components/Character/Character";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
 	const router = createHashRouter(
@@ -31,7 +32,11 @@ function App() {
 		])
 	);
 
-	return <RouterProvider router={router} />;
+	return (
+		<AnimatePresence>
+			<RouterProvider router={router} />
+		</AnimatePresence>
+	);
 }
 
 export default App;

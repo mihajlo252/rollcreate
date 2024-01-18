@@ -4,6 +4,7 @@ import { getAllData } from "../utilities/getAllData";
 import { Filter } from "../components/Filter/Filter";
 import { SkeletonCard } from "../components/SkeletonCard/SkeletonCard";
 import { CampaignCard } from "../components/CampaignCard/CampaignCard";
+import { motion } from "framer-motion";
 
 export const Campaigns = () => {
 	const [campaigns, setCampaigns] = useState([]);
@@ -21,7 +22,7 @@ export const Campaigns = () => {
 	}, [filter]);
 
 	return (
-		<main className="flex flex-col gap-20">
+		<motion.main className="flex flex-col gap-20" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
 			<Filter options={["all", "featured"]} setFilter={setFilter} setCampaigns={setCampaigns}/>
 
 			<h2 className="text-5xl text-primary font-semibold">
@@ -46,6 +47,6 @@ export const Campaigns = () => {
 					</>
 				)}
 			</div>
-		</main>
+		</motion.main>
 	);
 };

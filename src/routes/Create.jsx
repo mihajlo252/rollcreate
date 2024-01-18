@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getData } from '../utilities/getData'
+import { motion } from 'framer-motion'
 
 export const Create = () => {
   
@@ -16,13 +17,13 @@ export const Create = () => {
   }, [])
 
   return (
-    <div>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
       {classes.map(c => (
         <button className='btn btn-ghost' key={c.name}>
           <p>{c.name}</p>
         </button>
       ))
       }
-    </div>
+    </motion.div>
   )
 }

@@ -1,11 +1,13 @@
-import React from 'react'
-import { useLocation } from 'react-router-dom'
+import React from "react";
+import { useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export const Character = () => {
-  const location = useLocation()
+	const location = useLocation();
 
-
-  return (
-    <div>{location.state.name}</div>
-  )
-}
+	return (
+		<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+			{location.state.name}
+		</motion.div>
+	);
+};
