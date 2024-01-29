@@ -10,7 +10,7 @@ export const Footer = () => {
 			>
 				<div>
 					<div className="grid grid-flow-col gap-4">
-						<a href="https://github.com/mihajlo252/rollcreate" aria-label="Github Link">
+						<a href="https://github.com/mihajlo252" aria-label="Github Link">
 							<BsGithub size={30} />
 						</a>
 					</div>
