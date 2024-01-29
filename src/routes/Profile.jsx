@@ -19,14 +19,14 @@ export const Profile = () => {
 	
 	return (
 		<>
-			<motion.div className="flex gap-2" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+			<motion.div className="flex gap-2 w-full" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
 				<Characters userData={userData} />
-				<div className="w-[50%] flex-col">
+				<div className="flex w-[50%] flex-col gap-2">
 					<ProfileData userData={userData} />
-					<div className="flex min-h-[50%]">
-						<div className="w-full ">
-							<div className="w-full min-h-[50%] bg-black">dsa</div>
-							<div className="w-full min-h-[50%] bg-black">zxv</div>
+					<div className="flex h-[50%] gap-2">
+						<div className="h-full flex flex-col gap-2 w-full">
+							<div className="w-full h-[50%] bg-black">dsa</div>
+							<div className="w-full h-[50%] bg-black">zxv</div>
 						</div>
 						<div className="w-full bg-black">asd</div>
 					</div>

@@ -27,12 +27,16 @@ export const Characters = ({ userData }) => {
 	}, []);
 
 	return (
-		<div className={`w-[50%] h-[80%] px-5 py-9 flex flex-col gap-5 bg-[#0e0d14] rounded-[15px] bg-opacity-70`}>
-      <h2 className="text-4xl text-neutral">Characters</h2>
+		<div
+			className={`w-[50%] px-5 py-9 flex flex-col justify-around bg-[#0e0d14] rounded-[15px] bg-opacity-70`}
+		>
+			<h2 className="text-4xl text-neutral">Characters</h2>
 			<div className={`overflow-y-scroll ${CharactersStyles.scrollable}`}>
-				<div className="h-[500px] flex flex-col gap-2 pe-2">
+				<div className=" h-[500px] flex flex-col gap-2 pe-2">
 					{characters.map((character) => (
-						<CharacterCard key={character.id} character={character} />
+						<>
+							<CharacterCard key={character.id} character={character} />
+						</>
 					))}
 				</div>
 			</div>
