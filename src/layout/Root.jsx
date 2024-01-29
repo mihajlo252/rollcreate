@@ -7,7 +7,7 @@ export const Root = () => {
 	return (
 		<>
 			<Navigation />
-			<div className={`flex jusify-center px-[12rem] py-20 min-h-[100dvh] relative max-[600px]:px-[2rem]`}>
+			<div className={`jusify-center relative flex min-h-[100svh] px-[12rem] py-20 max-[600px]:px-[2rem] max-[600px]:pt-36`}>
 				<Outlet />
 			</div>
 			<Footer />
