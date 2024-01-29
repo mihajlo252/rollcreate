@@ -50,3 +50,37 @@
   @apply text-neutral-content;
 }
 
+
+@media (max-width: 600px) {
+  .nav {
+    @apply bg-[#0e0d14] bg-opacity-50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding-block: 1.5rem;
+    gap: 1rem;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 150ms ease-in-out;
+  }
+
+  .nav[data-isopen="true"] {
+    transform: scaleY(1);
+  }
+
+  .nav_link {
+    opacity: 0;
+    transition: opacity 150ms 50ms ease-in-out;
+  }
+
+  .nav[data-isopen="true"] .nav_link {
+    opacity: 1;
+  }
+}
