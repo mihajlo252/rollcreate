@@ -22,7 +22,7 @@ export const Navigation = () => {
 	}, [userData]);
 
 	return (
-		<header className="relative z-10 flex flex-row items-center justify-between bg-[#0e0d14] bg-opacity-50 px-20 py-7 text-center max-[600px]:px-5 max-[600px]:py-5">
+		<header className="relative z-10 flex flex-row items-center justify-between bg-[#0e0d14] bg-opacity-50 px-20 py-7 text-center max-[600px]:px-5 max-[600px]:py-5 min-[600px]:backdrop-blur-sm">
 			<Logo />
 			<nav className={`${NavigationStyles.nav}`} data-isopen={isOpen}>
 				<div className="min-[600px]:hidden">
@@ -55,7 +55,7 @@ export const Navigation = () => {
 					setIsOpen={setIsOpen}
 					isSignedIn={isSignedIn}
 				/>
-				<div className={`max-[600px]:hidden ${NavigationStyles.user_access}`}>
+				<div className={`max-[600px]:hidden`}>
 					<UserAccessGroup isSignedIn={isSignedIn} />
 				</div>
 			</div>

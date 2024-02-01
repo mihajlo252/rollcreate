@@ -64,8 +64,8 @@
     left: 0;
     width: 100%;
     margin: 0;
-    padding-block: 1.5rem;
-    gap: 1rem;
+    padding-bottom: 2rem;
+    gap: 2rem;
     transform: scaleY(0);
     transform-origin: top;
     transition: transform 150ms ease-in-out;
