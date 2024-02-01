@@ -17,21 +17,25 @@ body {
 
 #root {
 	min-height: 100vh;
-	background: url(/assets/images/background-dragon-dark-lg.png) no-repeat;
-	background-size: contain;
+	background: url(/assets/images/background-soldier-portrait-lg.png) no-repeat, #050c0d;
+	background-size: cover;
+	background-attachment: fixed;
 }
 
 @media (max-width: 1200px) {
 	#root {
 		min-height: 100vh;
-		background: url(/assets/images/background-dragon-dark-md.png) no-repeat;
-		background-size: contain;
+		background: url(/assets/images/background-soldier-portrait-md.png) no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
 	}
 }
-@media (max-width: 800px) {
+@media (max-width: 600px) {
 	#root {
 		min-height: 100vh;
-		background: url(/assets/images/background-dragon-dark-sm.png) no-repeat;
-		background-size: contain;
+		background: url(/assets/images/background-soldier-portrait-sm.png) no-repeat;
+		background-size:auto;
+		background-attachment: fixed;
+		background-position: top;
 	}
 }
