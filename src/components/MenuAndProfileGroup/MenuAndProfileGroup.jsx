@@ -1,11 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { CgMenu, CgProfile } from "react-icons/cg";
+import { CgProfile } from "react-icons/cg";
+import { BurgerClose } from "react-burger-icons";
 import MAPGStyles from "./MenuAndProfileGroupStyles.module.css";
 
 export const MenuAndProfileGroup = ({ isOpen, setIsOpen, isSignedIn }) => {
 	return (
-		<div className="flex">
+		<div className="flex items-center gap-3">
 			{isSignedIn ? (
 				<NavLink
 					to="/profile"
@@ -16,9 +17,12 @@ export const MenuAndProfileGroup = ({ isOpen, setIsOpen, isSignedIn }) => {
 			) : (
 				<></>
 			)}
-			<div className="min-[600px]:hidden">
-				<button onClick={() => setIsOpen(!isOpen)}><CgMenu size={35} /></button>
-			</div>
+			<button
+				className="btn btn-ghost p-0 min-[600px]:hidden"
+				onClick={() => setIsOpen(!isOpen)}
+			>
+				<BurgerClose size={35} isClosed={isOpen} />
+			</button>
 		</div>
 	);
 };
