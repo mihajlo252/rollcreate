@@ -15,7 +15,7 @@ export const UserAccessGroup = ({ isSignedIn }) => {
 					<li>
 						<NavLink
 							to="/signin"
-							className={`btn btn-outline border-secondary bg-secondary text-neutral hover:border-primary hover:bg-primary`}
+							className={`btn btn-outline border-secondary bg-secondary text-neutral hover:border-primary hover:bg-primary hover:text-neutral-content`}
 						>
 							Sign In
 						</NavLink>
