@@ -17,13 +17,13 @@ export const Create = () => {
   }, [])
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+    <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
       {classes.map(c => (
         <button className='btn btn-ghost' key={c.name}>
           <p>{c.name}</p>
         </button>
       ))
       }
-    </motion.div>
+    </motion.section>
   )
 }

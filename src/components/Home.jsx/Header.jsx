@@ -3,9 +3,9 @@ import { NavLink } from "react-router-dom";
 
 export const Header = () => {
 	return (
-		<section className="flex flex-col min-h-[100vh] items-start gap-5 justify-between pt-0 max-[600px]:items-center pb-[40vh]">
+		<>
 			<div className="flex flex-col gap-10 max-[600px]:text-center">
-				<h1 className=" text-7xl text-primary max-[600px]:text-5xl">
+				<h1 className="text-7xl text-primary max-[600px]:text-5xl">
 					All you have to do is ROLL!
 				</h1>
 				<p className="text-2xl text-neutral max-[600px]:text-[1rem]">
@@ -15,10 +15,10 @@ export const Header = () => {
 			</div>
 			<NavLink
 				to="/create"
-				className="btn btn-primary hover:bg-primary hover:scale-[1.1] text-neutral-content font-semibold"
+				className="btn btn-primary font-semibold text-neutral-content hover:scale-[1.1] hover:bg-primary"
 			>
 				Get Started
 			</NavLink>
-		</section>
+		</>
 	);
 };

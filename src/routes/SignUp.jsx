@@ -15,7 +15,7 @@ export const SignUp = () => {
 	};
 
 	return (
-		<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+		<motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
 			<Form
 				method="post"
 				className="flex flex-col gap-10"
@@ -33,7 +33,7 @@ export const SignUp = () => {
 							name="email"
 							id="email"
 							autoComplete="on"
-							className="w-44 placeholder:text-gray-500 text-neutral-content"
+							className="w-44 text-neutral-content placeholder:text-gray-500"
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
 						/>
@@ -46,7 +46,7 @@ export const SignUp = () => {
 							name="username"
 							id="username"
 							autoComplete="on"
-							className="w-44 placeholder:text-gray-500 text-neutral-content"
+							className="w-44 text-neutral-content placeholder:text-gray-500"
 							value={username}
 							onChange={(e) => setUsername(e.target.value)}
 						/>
@@ -58,7 +58,7 @@ export const SignUp = () => {
 							placeholder="*********"
 							name="password"
 							id="password"
-							className="w-44 placeholder:text-gray-500 text-neutral-content"
+							className="w-44 text-neutral-content placeholder:text-gray-500"
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
 						/>
@@ -68,6 +68,6 @@ export const SignUp = () => {
 					Sign Up
 				</button>
 			</Form>
-		</motion.div>
+		</motion.section>
 	);
 };

@@ -4,21 +4,17 @@ import FooterStyles from "./FooterStyles.module.css";
 
 export const Footer = () => {
 	return (
-		<section className="footer">
-			<footer
-				className={`footer footer-center p-8 text-white-content ${FooterStyles.footer}`}
-			>
-				<div>
-					<div className="grid grid-flow-col gap-4">
-						<a href="https://github.com/mihajlo252" aria-label="Github Link">
-							<BsGithub size={30} />
-						</a>
-					</div>
-				</div>
+		<footer
+			className={`footer footer-center p-8 text-white-content ${FooterStyles.footer}`}
+		>
+			<div className="flex flex-col gap-3">
+				<a href="https://github.com/mihajlo252" aria-label="Github Link">
+					<BsGithub size={30} />
+				</a>
 				<div>
 					<p className="font-bold">All rights reserved © Mihajlo Kostić 2023</p>
 				</div>
-			</footer>
-		</section>
+			</div>
+		</footer>
 	);
 };

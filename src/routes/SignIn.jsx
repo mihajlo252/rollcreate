@@ -27,7 +27,7 @@ export const SignIn = () => {
 	};
 
 	return (
-		<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+		<motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
 			<Form
 				method="post"
 				className="flex flex-col gap-10"
@@ -46,7 +46,7 @@ export const SignIn = () => {
 							placeholder="john@doe.rs"
 							name="email"
 							id="email"
-							className="w-44 placeholder:text-gray-500 text-neutral-content"
+							className="w-44 text-neutral-content placeholder:text-gray-500"
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
 							required
@@ -63,7 +63,7 @@ export const SignIn = () => {
 							placeholder="*********"
 							name="password"
 							id="password"
-							className="w-44 placeholder:text-gray-500 text-neutral-content"
+							className="w-44 text-neutral-content placeholder:text-gray-500"
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
 							required
@@ -80,6 +80,6 @@ export const SignIn = () => {
 					Sign In
 				</button>
 			</Form>
-		</motion.div>
+		</motion.section>
 	);
 };
