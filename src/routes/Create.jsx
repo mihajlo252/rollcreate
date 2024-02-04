@@ -1,29 +1,32 @@
-import React, { useEffect, useState } from 'react'
-import { getData } from '../utilities/getData'
-import { motion } from 'framer-motion'
+import React, { useEffect, useState } from "react";
+import { getData } from "../utilities/getData";
+import { motion } from "framer-motion";
+import { pageChange } from "../redux/page";
+import { useOutletContext } from "react-router-dom";
 
 export const Create = () => {
-  
-  const [classes, setClasses] = useState([])
+	const { dispatch } = useOutletContext();
 
-  const handleGetClasses = async () => {
-    const type_of_file = 'Classes'
-    const res = await getData(type_of_file)
-    setClasses(res)
-  }
+	const [classes, setClasses] = useState([]);
 
-  useEffect(() => {
-    handleGetClasses()
-  }, [])
+	const handleGetClasses = async () => {
+		const type_of_file = "Classes";
+		const res = await getData(type_of_file);
+		setClasses(res);
+	};
 
-  return (
-    <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-      {classes.map(c => (
-        <button className='btn btn-ghost' key={c.name}>
-          <p>{c.name}</p>
-        </button>
-      ))
-      }
-    </motion.section>
-  )
-}
+	useEffect(() => {
+		handleGetClasses();
+		dispatch(pageChange("create"));
+	}, []);
+
+	return (
+		<motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+			{classes.map((c) => (
+				<button className="btn btn-ghost" key={c.name}>
+					<p>{c.name}</p>
+				</button>
+			))}
+		</motion.section>
+	);
+};

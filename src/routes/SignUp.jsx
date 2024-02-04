@@ -1,18 +1,24 @@
-import React, { useState } from "react";
-import { Form } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Form, useOutletContext } from "react-router-dom";
 import { signUpNewUser } from "../utilities/signUpNewUser";
 import { motion } from "framer-motion";
+import { pageChange } from "../redux/page";
 
 export const SignUp = () => {
 	const [email, setEmail] = useState("");
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
+	const { dispatch } = useOutletContext();
 
 	const handleSignUp = async (event) => {
 		event.preventDefault();
 		if (email === "" || password === "" || username === "") return;
 		await signUpNewUser(email, password, username);
 	};
+
+	useEffect(() => {
+		dispatch(pageChange("signup"));
+	}, []);
 
 	return (
 		<motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }}>

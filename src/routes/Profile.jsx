@@ -1,20 +1,25 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import { Characters } from "../components/Characters/Characters";
 import { ProfileData } from "../components/ProfileData/ProfileData";
 import { motion } from "framer-motion";
+import { pageChange } from "../redux/page";
 
 export const Profile = () => {
 	const { userData } = useSelector((state) => state.userData);
 
 	const navigate = useNavigate();
 
+	const {dispatch} = useOutletContext();
+
+	
 	useEffect(() => {
 		if (!userData) {
 			navigate("/");
 			return;
 		}
+		dispatch(pageChange("profile"));
 	}, []);
 	
 	return (

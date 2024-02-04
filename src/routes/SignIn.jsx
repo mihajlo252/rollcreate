@@ -1,9 +1,10 @@
-import React, { useState } from "react";
-import { Form, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Form, useNavigate, useOutletContext } from "react-router-dom";
 import { signInUser } from "../utilities/signInUser";
-import { useDispatch } from "react-redux";
+
 import { login } from "../redux/user";
 import { motion } from "framer-motion";
+import { pageChange } from "../redux/page";
 
 export const SignIn = () => {
 	const [email, setEmail] = useState("");
@@ -11,7 +12,8 @@ export const SignIn = () => {
 	const [badLogin, setBadLogin] = useState(false);
 
 	const navigate = useNavigate();
-	const dispatch = useDispatch();
+
+	const { dispatch } = useOutletContext();
 
 	const handleSignIn = async (event) => {
 		event.preventDefault();
@@ -25,6 +27,10 @@ export const SignIn = () => {
 		navigate("/profile");
 		setBadLogin(false);
 	};
+
+	useEffect(() => {
+		dispatch(pageChange("signin"));
+	}, [])
 
 	return (
 		<motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }}>

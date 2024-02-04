@@ -5,17 +5,26 @@ import { Filter } from "../components/Filter/Filter";
 import { SkeletonCard } from "../components/SkeletonCard/SkeletonCard";
 import { CampaignCard } from "../components/CampaignCard/CampaignCard";
 import { motion } from "framer-motion";
+import { pageChange } from "../redux/page";
+import { useOutletContext } from "react-router-dom";
 
 export const Campaigns = () => {
 	const [campaigns, setCampaigns] = useState([]);
 	const [filter, setFilter] = useState("all");
 	const [isLoading, setIsLoading] = useState(true);
 
+	const { dispatch } = useOutletContext();
+
+
 	const handleGetAllCampaigns = async () => {
 		const res = await getAllData("campaigns");
 		setCampaigns(res.data);
 		setIsLoading(false);
 	};
+
+	useEffect(() => {
+		dispatch(pageChange("campaigns"));
+	}, [])
 
 	useEffect(() => {
 		handleGetAllCampaigns();
