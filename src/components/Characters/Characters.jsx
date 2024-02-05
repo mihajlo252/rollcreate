@@ -34,7 +34,7 @@ export const Characters = ({ userData }) => {
 			<div className={`overflow-y-scroll ${CharactersStyles.scrollable}`}>
 				<div className="flex h-[500px] flex-col gap-2 pe-2">
 					{characters.map((character) => (
-							<CharacterCard key={character.id} character={character} />
+						<CharacterCard key={character.id} character={character} />
 					))}
 				</div>
 			</div>

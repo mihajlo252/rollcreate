@@ -21,7 +21,9 @@ export const Profile = () => {
 		}
 		dispatch(pageChange("profile"));
 	}, []);
-	
+
+	if (!userData) return;
+
 	return (
 		<>
 			<motion.section className="flex w-full gap-2" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
