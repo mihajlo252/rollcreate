@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Form, useOutletContext } from "react-router-dom";
+import { Form, NavLink, useOutletContext } from "react-router-dom";
 import { signUpNewUser } from "../utilities/signUpNewUser";
 import { motion } from "framer-motion";
 import { pageChange } from "../redux/page";
@@ -21,59 +21,71 @@ export const SignUp = () => {
 	}, []);
 
 	return (
-		<motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-			<Form
-				method="post"
-				className="flex flex-col gap-10"
-				onSubmit={(e) => handleSignUp(e)}
-				initial={{ opacity: 0 }}
-				animate={{ opacity: 1 }}
-			>
-				<h2>Sign Up</h2>
-				<div className="flex flex-col gap-5">
-					<div className="flex flex-col gap-2">
-						<label htmlFor="email">Email:</label>
-						<input
-							type="email"
-							placeholder="john@doe.rs"
-							name="email"
-							id="email"
-							autoComplete="on"
-							className="w-44 text-neutral-content placeholder:text-gray-500"
-							value={email}
-							onChange={(e) => setEmail(e.target.value)}
-						/>
+		<motion.section
+			className="flex w-full items-center gap-10 pb-32 pt-0"
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+		>
+			<div className="card w-full max-w-sm shrink-0 bg-[#0e0d14] bg-opacity-70 shadow-2xl">
+				<Form
+					method="post"
+					className="card-body gap-10"
+					onSubmit={(e) => handleSignUp(e)}
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+				>
+					<h1 className="self-center text-5xl font-bold text-primary">Sign Up</h1>
+					<div className="flex flex-col gap-5">
+						<div className="form-control gap-1">
+							<label htmlFor="email">Email:</label>
+							<input
+								type="email"
+								placeholder="john@doe.rs"
+								name="email"
+								id="email"
+								autoComplete="on"
+								className="input input-bordered placeholder:text-gray-500"
+								value={email}
+								onChange={(e) => setEmail(e.target.value)}
+								required
+							/>
+						</div>
+						<div className="form-control gap-1">
+							<label htmlFor="username">Username:</label>
+							<input
+								type="text"
+								placeholder="johndoe"
+								name="username"
+								id="username"
+								autoComplete="on"
+								className="input input-bordered placeholder:text-gray-500"
+								value={username}
+								onChange={(e) => setUsername(e.target.value)}
+								required
+							/>
+						</div>
+						<div className="form-control gap-1">
+							<label htmlFor="password">Password:</label>
+							<input
+								type="password"
+								placeholder="*********"
+								name="password"
+								id="password"
+								className="input input-bordered placeholder:text-gray-500"
+								value={password}
+								onChange={(e) => setPassword(e.target.value)}
+								required
+							/>
+						</div>
 					</div>
-					<div className="flex flex-col gap-2">
-						<label htmlFor="username">Username:</label>
-						<input
-							type="text"
-							placeholder="johndoe"
-							name="username"
-							id="username"
-							autoComplete="on"
-							className="w-44 text-neutral-content placeholder:text-gray-500"
-							value={username}
-							onChange={(e) => setUsername(e.target.value)}
-						/>
-					</div>
-					<div className="flex flex-col gap-2">
-						<label htmlFor="password">Password:</label>
-						<input
-							type="password"
-							placeholder="*********"
-							name="password"
-							id="password"
-							className="w-44 text-neutral-content placeholder:text-gray-500"
-							value={password}
-							onChange={(e) => setPassword(e.target.value)}
-						/>
-					</div>
-				</div>
-				<button type="submit" className="btn btn-primary w-44">
-					Sign Up
-				</button>
-			</Form>
+					<p>
+						Already have an account? <NavLink className="link-hover link-secondary link" to="/signin">Sign In</NavLink>
+					</p>
+					<button type="submit" className="btn btn-primary">
+						Sign Up
+					</button>
+				</Form>
+			</div>
 		</motion.section>
 	);
 };
