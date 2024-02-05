@@ -48,6 +48,10 @@ export const SignUp = () => {
 								value={email}
 								onChange={(e) => setEmail(e.target.value)}
 								required
+								autoFocus
+								aria-label="email"
+								aria-required="true"
+								title="Must be a valid email address"
 							/>
 						</div>
 						<div className="form-control gap-1">
@@ -75,6 +79,11 @@ export const SignUp = () => {
 								value={password}
 								onChange={(e) => setPassword(e.target.value)}
 								required
+								minLength="8"
+								maxLength="20"
+								title="Must contain at least one lowercase letter"
+								aria-label="password"
+								aria-required="true"
 							/>
 						</div>
 					</div>
