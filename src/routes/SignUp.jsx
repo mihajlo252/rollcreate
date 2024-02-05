@@ -40,7 +40,7 @@ export const SignUp = () => {
 							<label htmlFor="email">Email:</label>
 							<input
 								type="email"
-								placeholder="john@doe.rs"
+								placeholder="rollcreate252@email.rs"
 								name="email"
 								id="email"
 								autoComplete="on"
@@ -58,7 +58,7 @@ export const SignUp = () => {
 							<label htmlFor="username">Username:</label>
 							<input
 								type="text"
-								placeholder="johndoe"
+								placeholder="rollcreate252"
 								name="username"
 								id="username"
 								autoComplete="on"

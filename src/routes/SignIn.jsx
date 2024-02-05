@@ -54,7 +54,7 @@ export const SignIn = () => {
 							<label htmlFor="email">Email:</label>
 							<input
 								type="email"
-								placeholder="john@doe.rs"
+								placeholder="rollcreate252@email.rs"
 								name="email"
 								id="email"
 								className="input input-bordered placeholder:text-gray-500"
