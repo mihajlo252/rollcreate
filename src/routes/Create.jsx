@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getData } from "../utilities/getData";
+import { getDndData } from "../utilities/getDndData";
 import { motion } from "framer-motion";
 import { pageChange } from "../redux/page";
 import { useOutletContext } from "react-router-dom";
@@ -11,7 +11,7 @@ export const Create = () => {
 
 	const handleGetClasses = async () => {
 		const type_of_file = "Classes";
-		const res = await getData(type_of_file);
+		const res = await getDndData(type_of_file);
 		setClasses(res);
 	};
 
