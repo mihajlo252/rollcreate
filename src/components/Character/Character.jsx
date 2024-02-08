@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation, useOutletContext } from "react-router-dom";
 import { motion } from "framer-motion";
 import { pageChange } from "../../redux/page";
