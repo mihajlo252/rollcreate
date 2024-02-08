@@ -1,4 +1,4 @@
 .footer {
-  background: url(./assets/images/footer.png) no-repeat;
+  background: url(/assets/images/footer.png) no-repeat;
   background-size: cover;
 }
