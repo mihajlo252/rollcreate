@@ -6,7 +6,7 @@ import FooterStyles from "./FooterStyles.module.css";
 export const Footer = () => {
 	return (
 		<footer
-			className={`text-white-content footer footer-center p-8 ${FooterStyles.footer}`}
+			className={`text-white-content footer footer-center pb-8 pt-16 ${FooterStyles.footer}`}
 		>
 			<div className="flex flex-col gap-3">
 				<a href="https://github.com/mihajlo252" aria-label="Github Link">
