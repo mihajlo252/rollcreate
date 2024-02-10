@@ -12,7 +12,7 @@ export const CharacterCard = ({ character }) => {
 			className="transition-transform hover:scale-[1.01]"
 		>
 			<div
-				className={`relative items-center justify-center bg-[#0e0d14] py-5 pe-5 ps-10`}
+				className={`relative items-center justify-center bg-[#09080D] py-5 pe-5 ps-10`}
 			>
 				<div className={`${CardStyles.card}`}>
 					<h1 className={`text-3xl text-neutral self-center ${CardStyles.char_name}`}>

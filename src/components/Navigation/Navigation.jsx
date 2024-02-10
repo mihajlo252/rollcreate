@@ -22,7 +22,7 @@ export const Navigation = () => {
 	}, [userData]);
 
 	return (
-		<header className="relative z-10 flex flex-row items-center justify-between bg-[#0e0d14] bg-opacity-50 px-20 py-7 text-center max-[600px]:px-5 max-[600px]:py-5 min-[600px]:backdrop-blur-sm">
+		<header className="relative z-10 flex flex-row items-center justify-between bg-[#09080D] bg-opacity-50 px-20 py-7 text-center max-[600px]:px-5 max-[600px]:py-5 min-[600px]:backdrop-blur-sm">
 			<Logo />
 			<nav className={`${NavigationStyles.nav}`} data-isopen={isOpen}>
 				<div className="min-[600px]:hidden">
