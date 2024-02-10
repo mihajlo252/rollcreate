@@ -31,13 +31,13 @@ export const Campaigns = () => {
 	}, [filter]);
 
 	return (
-		<motion.section className="flex flex-col gap-20" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+		<motion.section className="flex flex-col" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
 			<Filter options={["all", "featured"]} setFilter={setFilter} setCampaigns={setCampaigns}/>
 
 			<h2 className="text-5xl font-semibold text-primary">
 				{filter == "featured" ? "Featured" : "All"} Campaigns
 			</h2>
-			<div className="grid grid-cols-4 gap-36">
+			<div className="grid grid-cols-4 gap-5">
 				{isLoading ? (
 					<>
 						<SkeletonCard />

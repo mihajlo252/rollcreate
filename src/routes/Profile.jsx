@@ -35,17 +35,23 @@ export const Profile = () => {
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 			>
-				<Characters userData={userData} />
+				<div className="h-full w-[50%]">
+					<Characters userData={userData} />
+				</div>
 				<div className="flex w-[50%] flex-col gap-2">
-					<ProfileData userData={userData} />
+					<div className="h-[50%]">
+						<ProfileData userData={userData} />
+					</div>
 					<div className="flex h-[50%] gap-2">
 						<div className="flex h-full w-full flex-col gap-2">
-							<div className="h-[40%] w-full rounded-[15px] bg-[#0e0d14] bg-opacity-70 px-5 py-9">Misc</div>
-							<div className="h-[60%] w-full rounded-[15px] bg-[#0e0d14] bg-opacity-70 px-5 py-9">
+							<div className="h-[40%] w-full rounded-[15px] bg-[#09080D] bg-opacity-70 px-5 py-9">
+								Misc
+							</div>
+							<div className="h-[60%] w-full rounded-[15px] bg-[#09080D] bg-opacity-70 px-5 py-9">
 								<Stats />
 							</div>
 						</div>
-						<div className="flex w-full flex-col gap-10 rounded-[15px] bg-[#0e0d14] bg-opacity-70 px-5 py-9">
+						<div className="w-[50%]">
 							<UserCampaigns userData={userData} />
 						</div>
 					</div>
