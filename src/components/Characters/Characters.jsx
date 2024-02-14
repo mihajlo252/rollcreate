@@ -28,7 +28,7 @@ export const Characters = ({ userData }) => {
 
 	return (
 		<div
-			className={`flex h-full w-full flex-col justify-around rounded-[15px] bg-[#09080D] bg-opacity-70 px-5 py-9`}
+			className={`flex h-full w-full flex-col gap-24 rounded-[15px] bg-[#09080D] bg-opacity-70 px-5 py-9`}
 		>
 			<h2 className="text-5xl text-neutral">Characters</h2>
 			<div className={`overflow-y-scroll ${CharactersStyles.scrollable}`}>
