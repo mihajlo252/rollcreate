@@ -3,6 +3,7 @@ import { getDndData } from "../utilities/getDndData";
 import { motion } from "framer-motion";
 import { pageChange } from "../redux/page";
 import { useOutletContext } from "react-router-dom";
+import { AnimatedCard } from "../components/AnimatedCard/AnimatedCard";
 
 export const Create = () => {
 	const { dispatch } = useOutletContext();
@@ -21,12 +22,9 @@ export const Create = () => {
 	}, []);
 
 	return (
-		<motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-			{classes.map((c) => (
-				<button className="btn btn-ghost" key={c.name}>
-					<p>{c.name}</p>
-				</button>
-			))}
+		<motion.section className="flex w-full items-center justify-around gap-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+			<AnimatedCard text="Create a character" bg="/assets/images/background-soldier-portrait-sm.png"/>
+			<AnimatedCard text="Create a campaign" bg="/assets/images/background-soldier-portrait-sm.png"/>
 		</motion.section>
 	);
 };
