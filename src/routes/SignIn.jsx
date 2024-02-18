@@ -32,6 +32,14 @@ export const SignIn = () => {
 		dispatch(pageChange("signin"));
 	}, []);
 
+
+	const quickSignIn = async () => {
+		const { data, error } = await signInUser("beca252@gmail.com", "Becabeca1");
+		dispatch(login(data));
+		navigate("/profile");
+		setBadLogin(false);
+	}
+
 	return (
 		<motion.section
 			className="flex w-full items-center gap-10 pb-32 pt-0"
@@ -95,6 +103,8 @@ export const SignIn = () => {
 					</button>
 				</Form>
 			</div>
+
+			<button className="btn btn-outline bg-neutral text-neutral-content" onClick={quickSignIn} title="Quick sign in">Quick Sign In</button>
 		</motion.section>
 	);
 };
