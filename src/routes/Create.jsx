@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getDndData } from "../utilities/getDndData";
 import { motion } from "framer-motion";
 import { pageChange } from "../redux/page";
-import { useOutletContext } from "react-router-dom";
+import { NavLink, useOutletContext } from "react-router-dom";
 import { AnimatedCard } from "../components/AnimatedCard/AnimatedCard";
 
 export const Create = () => {
@@ -22,9 +22,23 @@ export const Create = () => {
 	}, []);
 
 	return (
-		<motion.section className="flex w-full items-center justify-around gap-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-			<AnimatedCard text="Create a character" bg="/assets/images/background-soldier-portrait-sm.png"/>
-			<AnimatedCard text="Create a campaign" bg="/assets/images/background-soldier-portrait-sm.png"/>
+		<motion.section
+			className="flex w-full items-center justify-around gap-10"
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+		>
+			<NavLink to="./character">
+				<AnimatedCard
+					text="Create a character"
+					bg="/assets/images/background-soldier-portrait-sm.png"
+				/>
+			</NavLink>
+			<NavLink to="./campaign">
+				<AnimatedCard
+					text="Create a campaign"
+					bg="/assets/images/background-soldier-portrait-sm.png"
+				/>
+			</NavLink>
 		</motion.section>
 	);
 };
