@@ -30,13 +30,13 @@ export const Create = () => {
 			<NavLink to="./character">
 				<AnimatedCard
 					text="Create a character"
-					bg="/assets/images/background-soldier-portrait-sm.png"
+					bg="assets/images/background-soldier-portrait-sm.png"
 				/>
 			</NavLink>
 			<NavLink to="./campaign">
 				<AnimatedCard
 					text="Create a campaign"
-					bg="/assets/images/background-soldier-portrait-sm.png"
+					bg="assets/images/background-soldier-portrait-sm.png"
 				/>
 			</NavLink>
 		</motion.section>
