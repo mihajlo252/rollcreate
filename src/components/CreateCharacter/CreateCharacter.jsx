@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 
 export const CreateCharacter = () => {
 
-  const { user } = useSelector((state) => state.userData);
+  const  {userData}  = useSelector((state) => state.userData);
   
 	const [metaData, setMetaData] = useState({
 		name: "",
@@ -44,9 +44,12 @@ export const CreateCharacter = () => {
   }
 
   useEffect(() => {
-    handleGetAllCampaigns()
-    console.log(user);
+    handleGetAllCampaigns()		
   }, [])
+
+	useEffect(() => {
+		console.log(campaignId);
+	}, [campaignId])
 
 	return (
 		<motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
@@ -109,7 +112,7 @@ export const CreateCharacter = () => {
         <label className="label text-neutral-focus">Campaign</label>
         <select>
           {campaigns.map((campaign) => (
-            <option key={campaign.id} value={campaign.id} onChange={() => { setCampaignId(campaign.id)}}>{campaign.campaign_name}</option>
+            <option key={campaign.id} value={campaign.id} onChange={() => setCampaignId(campaign.id)}>{campaign.campaign_name}</option>
           ))}
         </select>
 				<button type="submit" className="btn btn-primary">
