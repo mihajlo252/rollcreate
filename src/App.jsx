@@ -18,6 +18,7 @@ import { Character } from "./components/Character/Character";
 import { AnimatePresence } from "framer-motion";
 import { CreateCharacter } from "./components/CreateCharacter/CreateCharacter";
 import { CreateCampaign } from "./components/CreateCampaign/CreateCampaign";
+import { Campaign } from "./components/Campaign/Campaign";
 
 function App() {
 	const router = createHashRouter(
@@ -30,6 +31,7 @@ function App() {
 				<Route path="/create/character" element={<CreateCharacter />} />
 				<Route path="/create/campaign" element={<CreateCampaign />} />
 				<Route path="/campaigns" element={<Campaigns />} />
+				<Route path="/campaigns/:campaignId" element={<Campaign />} />
 				<Route path="/signup" element={<SignUp />} />
 				<Route path="/signin" element={<SignIn />} />
 			</Route>
