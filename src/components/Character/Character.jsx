@@ -1,16 +1,23 @@
 import React, { useEffect } from "react";
-import { useLocation, useOutletContext } from "react-router-dom";
+import { NavLink, useLocation, useOutletContext } from "react-router-dom";
 import { motion } from "framer-motion";
 import { pageChange } from "../../redux/page";
+import { deleteData } from "../../utilities/deleteData";
 
 export const Character = () => {
 	const { dispatch } = useOutletContext();
 
 	const { state } = useLocation();
 
+	const handleDelete = async () => {
+		const data = await deleteData("characters", state.id);
+	};
+
 	useEffect(() => {
 		dispatch(pageChange("character"));
 	}, []);
+
+	if(!state) return <div>Nothing to see here!</div>
 
 	return (
 		<motion.div
@@ -39,6 +46,7 @@ export const Character = () => {
 			</div>
 
 			<p>{state.backstory}</p>
+			<NavLink to="/profile" className="btn btn-ghost" onClick={handleDelete}>Delete</NavLink>
 		</motion.div>
 	);
 };

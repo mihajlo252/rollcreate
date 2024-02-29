@@ -2,13 +2,13 @@ import React from "react";
 import CardStyles from "./CharacterCardStyles.module.css";
 import { NavLink } from "react-router-dom";
 
-export const CharacterCard = ({ character }) => {
+export const CharacterCard = ({character }) => {
 	const { meta_data } = character;
 
 	return (
 		<NavLink
 			to={`./characters/${character.id}`}
-			state={meta_data}
+			state={{...meta_data, id: character.id}}
 			className="transition-transform hover:scale-[1.01]"
 		>
 			<div
