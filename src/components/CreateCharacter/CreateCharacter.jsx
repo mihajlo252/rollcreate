@@ -6,9 +6,8 @@ import { getAllData } from "../../utilities/getAllData";
 import { useSelector } from "react-redux";
 
 export const CreateCharacter = () => {
+	const { userData } = useSelector((state) => state.userData);
 
-  const  {userData}  = useSelector((state) => state.userData);
-  
 	const [metaData, setMetaData] = useState({
 		name: "",
 		race: {
@@ -30,30 +29,33 @@ export const CreateCharacter = () => {
 		backstory: "",
 		affiliation: "",
 	});
-  const [campaigns, setCampaigns] = useState([]);
-  const [campaignId, setCampaignId] = useState("");
+	const [campaigns, setCampaigns] = useState([]);
+	const [campaignId, setCampaignId] = useState("");
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		const { data } = await submitCharacter(metaData, userData.user.id, campaignId);
+		await submitCharacter(metaData, userData.user.id, campaignId);
 	};
 
-  const handleGetAllCampaigns = async () => {
-    const allCampaigns = await getAllData("campaigns");
-    setCampaigns(allCampaigns.data);
-  }
+	const handleGetAllCampaigns = async () => {
+		const res = await getAllData("campaigns");
+		setCampaigns(res.data);
+	};
 
-  useEffect(() => {
-    handleGetAllCampaigns()		
-  }, [])
+	const handleSetCampaignId = (e) => {
+		setCampaignId(e.target.value);
+	};
 
 	useEffect(() => {
-		console.log(campaignId);
-	}, [campaignId])
+		handleGetAllCampaigns();
+	}, []);
 
 	return (
 		<motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-			<Form className="flex flex-col gap-2 text-neutral-content" onSubmit={(e) => handleSubmit(e)}>
+			<Form
+				className="flex flex-col gap-2 text-neutral-content"
+				onSubmit={(e) => handleSubmit(e)}
+			>
 				<label className="label text-neutral-focus">Name</label>
 				<input
 					name="name"
@@ -96,7 +98,9 @@ export const CreateCharacter = () => {
 						})
 					}
 				/>
-				<label className="label text-neutral-focus" htmlFor="backstory" >Backstory</label>
+				<label className="label text-neutral-focus" htmlFor="backstory">
+					Backstory
+				</label>
 				<textarea
 					name="backstory"
 					id="backstory"
@@ -109,12 +113,14 @@ export const CreateCharacter = () => {
 					value={metaData.affiliation}
 					onChange={(e) => setMetaData({ ...metaData, affiliation: e.target.value })}
 				/>
-        <label className="label text-neutral-focus">Campaign</label>
-        <select>
-          {campaigns.map((campaign) => (
-            <option key={campaign.id} value={campaign.id} onChange={() => setCampaignId(campaign.id)}>{campaign.campaign_name}</option>
-          ))}
-        </select>
+				<label className="label text-neutral-focus">Campaign</label>
+				<select onChange={handleSetCampaignId}>
+					{campaigns.map((campaign) => (
+						<option key={campaign.id} value={campaign.id}>
+							{campaign.campaign_name}
+						</option>
+					))}
+				</select>
 				<button type="submit" className="btn btn-primary">
 					Submit
 				</button>
