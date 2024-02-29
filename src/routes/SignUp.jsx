@@ -8,12 +8,14 @@ export const SignUp = () => {
 	const [email, setEmail] = useState("");
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
+	const [verify, setVerify] = useState(false);
 	const { dispatch } = useOutletContext();
 
 	const handleSignUp = async (event) => {
 		event.preventDefault();
 		if (email === "" || password === "" || username === "") return;
 		await signUpNewUser(email, password, username);
+		setVerify(true);
 	};
 
 	useEffect(() => {
@@ -95,6 +97,15 @@ export const SignUp = () => {
 					</button>
 				</Form>
 			</div>
+			{verify && (
+				<motion.div
+					className="card w-full max-w-sm shrink-0 bg-[#0e0d14] px-10 py-5"
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+				>
+					<p>Please verify your email. A verification email has been sent.</p>
+				</motion.div>
+			)}
 		</motion.section>
 	);
 };
