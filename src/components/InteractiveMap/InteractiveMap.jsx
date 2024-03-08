@@ -1,21 +1,28 @@
 import React, { useEffect, useState } from "react";
 import { supabase } from "../../supabase/supabase";
+import { POI } from "./POI/POI";
+import { useSelector } from "react-redux";
 
-export const InteractiveMap = ({ campaignId, mapUrl, isLoaded, setIsLoaded }) => {
+export const InteractiveMap = ({ profile, campaignId, mapUrl, isLoaded, setIsLoaded }) => {
 	const [coords, setCoords] = useState([]);
 	const [imageSize, setImageSize] = useState({ width: 0, height: 0 });
+	const [POIName, setPOIName] = useState("");
+	const [editMode, setEditMode] = useState(false);
+	const [revealPOI, setRevealPOI] = useState(false);
 
-	const [isHover, setIsHover] = useState(false);
+	const { userData } = useSelector((state) => state.userData);
 
 	let SCALE = imageSize.width / 100;
 	let hitbox = 5 * SCALE;
+	let coordsFontSize = imageSize.width / 1500 + "rem";
 
 	const handleClick = (e) => {
 		e.preventDefault();
-
+		if (!editMode) return;
 		let calcCoords = {
 			x: (e.nativeEvent.offsetX - hitbox / 2) / imageSize.width,
 			y: (e.nativeEvent.offsetY - hitbox / 2) / imageSize.height,
+			name: POIName,
 		};
 
 		setCoords([...coords, calcCoords]);
@@ -35,18 +42,18 @@ export const InteractiveMap = ({ campaignId, mapUrl, isLoaded, setIsLoaded }) =>
 	const submitCoordinates = async () => {
 		const { data, error } = await supabase
 			.from("campaigns")
-			.update([{ coordinates: [...coords] }])
+			.update([{ poi: [...coords] }])
 			.eq("id", campaignId)
 			.select();
 	};
 
 	const getCoordinates = async () => {
-		const { data, error } = await supabase.from("campaigns").select("coordinates").eq("id", campaignId);
+		const { data, error } = await supabase.from("campaigns").select("poi").eq("id", campaignId);
 		if (error) {
 			console.error(error);
 			return [];
 		}
-		return [...data[0].coordinates];
+		return [...data[0].poi];
 	};
 
 	const handleSetCoords = async () => {
@@ -72,8 +79,30 @@ export const InteractiveMap = ({ campaignId, mapUrl, isLoaded, setIsLoaded }) =>
 
 	return (
 		<>
-			<button onClick={handleDelete}>Delete</button>
-			<button onClick={() => submitCoordinates()}>Save</button>
+			{userData.user.id == profile && (
+				<div className={`flex gap-5 rounded-tl-xl rounded-tr-xl bg-black bg-opacity-50 px-10 py-5`}>
+					<button className="btn btn-ghost" onClick={handleDelete}>
+						Delete
+					</button>
+					<button className="btn btn-ghost" onClick={() => submitCoordinates()}>
+						Save
+					</button>
+					<button className={`btn btn-ghost`} onClick={() => setEditMode(!editMode)}>
+						{!editMode ? "Edit Mode" : "Done"}
+					</button>
+					{editMode && (
+						<>
+							<input
+								type="text"
+								value={POIName}
+								onChange={(e) => setPOIName(e.target.value)}
+								placeholder="POI name"
+								className="text-neutral-content"
+							/>
+						</>
+					)}
+				</div>
+			)}
 
 			<div className="relative h-full w-full">
 				<img
@@ -86,19 +115,21 @@ export const InteractiveMap = ({ campaignId, mapUrl, isLoaded, setIsLoaded }) =>
 				/>
 				{coords.map((coord, idx) => {
 					return (
-						<div
+						<POI
 							key={idx}
-							style={{
-								left: coord.x * imageSize.width,
-								top: coord.y * imageSize.height,
-								width: hitbox,
-								height: hitbox,
-							}}
-							className={`absolute bg-red-500`}
+							coord={coord}
+							imageSize={imageSize}
+							setRevealPOI={setRevealPOI}
+							hitbox={hitbox}
+							editMode={editMode}
+							coordsFontSize={coordsFontSize}
 						/>
 					);
 				})}
 			</div>
+			{/* {revealPOI && (
+				<POI
+			)} */}
 		</>
 	);
 };
