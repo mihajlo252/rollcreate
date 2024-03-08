@@ -8,16 +8,16 @@ import { AnimatedCard } from "../components/AnimatedCard/AnimatedCard";
 export const Create = () => {
 	const { dispatch } = useOutletContext();
 
-	const [classes, setClasses] = useState([]);
+	// const [classes, setClasses] = useState([]);
 
-	const handleGetClasses = async () => {
-		const type_of_file = "Classes";
-		const res = await getDndData(type_of_file);
-		setClasses(res);
-	};
+	// const handleGetClasses = async () => {
+	// 	const type_of_file = "Classes";
+	// 	const res = await getDndData(type_of_file);
+	// 	setClasses(res);
+	// };
 
 	useEffect(() => {
-		handleGetClasses();
+		// handleGetClasses();
 		dispatch(pageChange("create"));
 	}, []);
 

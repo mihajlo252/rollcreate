@@ -31,13 +31,13 @@ export const Campaigns = () => {
 	}, [filter]);
 
 	return (
-		<motion.section className="flex flex-col gap-20" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+		<motion.section className="flex h-full w-full flex-col gap-20" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
 			<Filter options={["all", "featured"]} setFilter={setFilter} setCampaigns={setCampaigns}/>
 
-			<h2 className="text-5xl font-semibold text-primary">
+			<h2 className="self-center text-5xl font-semibold text-primary">
 				{filter == "featured" ? "Featured" : "All"} Campaigns
 			</h2>
-			<div className="grid grid-cols-4 gap-5">
+			<div className="grid w-1/2 grid-rows-4 place-items-center gap-5 self-center rounded-[15px] bg-[#09080D] bg-opacity-70 px-5 py-9">
 				{isLoading ? (
 					<>
 						<SkeletonCard />

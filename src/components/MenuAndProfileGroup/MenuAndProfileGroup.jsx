@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
-import { BurgerClose } from "react-burger-icons";
+import { BurgerClose } from "react-burger-icons/dist/burgers/burgerClose/BurgerClose";
 import MAPGStyles from "./MenuAndProfileGroupStyles.module.css";
 
 export const MenuAndProfileGroup = ({ isOpen, setIsOpen, isSignedIn }) => {
