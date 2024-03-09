@@ -1,8 +1,20 @@
 import React, { useState } from "react";
+import { poiChange } from "../../../redux/poi";
+import { useOutletContext } from "react-router-dom";
 
-export const POI = ({coord, imageSize, hitbox, editMode, setRevealPOI, coordsFontSize }) => {
+export const POI = ({ coord, imageSize, hitbox, editMode, setRevealPOI, poiCircleInner, poiCircleOuter }) => {
+	const [isHover, setIsHover] = useState(false);
 
-  const [isHover, setIsHover] = useState(false);
+	const { dispatch } = useOutletContext();
+
+	// let innerCircle = poiCircle * .8
+
+	const handleClick = (e) => {
+		e.preventDefault();
+		dispatch(poiChange(coord));
+		setRevealPOI(true);
+		console.log(coord);
+	};
 
 	return (
 		<button
@@ -12,12 +24,20 @@ export const POI = ({coord, imageSize, hitbox, editMode, setRevealPOI, coordsFon
 				width: hitbox,
 				height: hitbox,
 			}}
-			className={`absolute ${editMode && "bg-black"} bg-opacity-40`}
-      onMouseOver={() => setIsHover(true)}
-      onMouseLeave={() => setIsHover(false)}
-			onClick={() => setRevealPOI(true)}
+			className={`absolute grid place-items-center ${editMode && "bg-black"} bg-opacity-40`}
+			onMouseOver={() => setIsHover(true)}
+			onMouseLeave={() => setIsHover(false)}
+			onClick={handleClick}
 		>
-      {isHover && <p className="left-0 top-0 text-balance text-white" style={{fontSize: coordsFontSize}}>{coord.name}</p>}
-    </button>
+			<div
+				className={`grid place-items-center opacity-0 transition-opacity border-2 border-red-500 rounded-full text-balance ${
+					isHover && "opacity-100"
+				}`}
+				style={{ width: poiCircleOuter, aspectRatio: 1 }}
+			>
+
+				<div className="rounded-full bg-red-500" style={{ width: poiCircleInner, aspectRatio: 1 }}></div>
+			</div>
+		</button>
 	);
 };

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { supabase } from "../../supabase/supabase";
 import { POI } from "./POI/POI";
 import { useSelector } from "react-redux";
+import { POInfo } from "./POI/POInfo";
 
 export const InteractiveMap = ({ profile, campaignId, mapUrl, isLoaded, setIsLoaded }) => {
 	const [coords, setCoords] = useState([]);
@@ -14,11 +15,15 @@ export const InteractiveMap = ({ profile, campaignId, mapUrl, isLoaded, setIsLoa
 
 	let SCALE = imageSize.width / 100;
 	let hitbox = 5 * SCALE;
-	let coordsFontSize = imageSize.width / 1500 + "rem";
+	let poiCircleOuter = imageSize.width / 1500 + "rem";
+	let poiCircleInner = imageSize.width / 1500 / 2 + "rem";
 
 	const handleClick = (e) => {
 		e.preventDefault();
-		if (!editMode) return;
+		if (!editMode) {
+			setRevealPOI(false);
+			return;
+		}
 		let calcCoords = {
 			x: (e.nativeEvent.offsetX - hitbox / 2) / imageSize.width,
 			y: (e.nativeEvent.offsetY - hitbox / 2) / imageSize.height,
@@ -104,7 +109,7 @@ export const InteractiveMap = ({ profile, campaignId, mapUrl, isLoaded, setIsLoa
 				</div>
 			)}
 
-			<div className="relative h-full w-full">
+			<div className="relative w-full">
 				<img
 					src={mapUrl}
 					alt="map"
@@ -115,21 +120,27 @@ export const InteractiveMap = ({ profile, campaignId, mapUrl, isLoaded, setIsLoa
 				/>
 				{coords.map((coord, idx) => {
 					return (
-						<POI
-							key={idx}
-							coord={coord}
-							imageSize={imageSize}
-							setRevealPOI={setRevealPOI}
-							hitbox={hitbox}
-							editMode={editMode}
-							coordsFontSize={coordsFontSize}
-						/>
+						<div key={idx}>
+							<POI
+								coord={coord}
+								imageSize={imageSize}
+								setRevealPOI={setRevealPOI}
+								hitbox={hitbox}
+								editMode={editMode}
+								poiCircleInner={poiCircleInner}
+								poiCircleOuter={poiCircleOuter}
+							/>
+						</div>
 					);
 				})}
+				<div
+					className={`absolute flex flex-col rounded-tl-xl rounded-bl-xl px-4 py-10 gap-20 top-0 right-0 h-full bg-black bg-opacity-50 w-1/5 scale-x-0 opacity-0 origin-right transition-all duration-[250ms] ${
+						revealPOI && "scale-x-100 opacity-100"
+					}`}
+				>
+					<POInfo />
+				</div>
 			</div>
-			{/* {revealPOI && (
-				<POI
-			)} */}
 		</>
 	);
 };
