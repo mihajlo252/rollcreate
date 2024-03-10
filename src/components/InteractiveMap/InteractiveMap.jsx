@@ -3,18 +3,20 @@ import { supabase } from "../../supabase/supabase";
 import { POI } from "./POI/POI";
 import { useSelector } from "react-redux";
 import { POInfo } from "./POI/POInfo";
+import { POIEdit } from "./POI/POIEdit";
 
 export const InteractiveMap = ({ profile, campaignId, mapUrl, isLoaded, setIsLoaded }) => {
-	const [coords, setCoords] = useState([]);
+	const [pois, setPOIs] = useState([]);
+	const [currentCoordinates, setCurrentCoordinates] = useState({ x: "", y: "" });
 	const [imageSize, setImageSize] = useState({ width: 0, height: 0 });
-	const [POIName, setPOIName] = useState("");
 	const [editMode, setEditMode] = useState(false);
 	const [revealPOI, setRevealPOI] = useState(false);
+	const [editPOI, setEditPOI] = useState(false);
 
 	const { userData } = useSelector((state) => state.userData);
 
 	let SCALE = imageSize.width / 100;
-	let hitbox = 5 * SCALE;
+	let hitbox = 3 * SCALE;
 	let poiCircleOuter = imageSize.width / 1500 + "rem";
 	let poiCircleInner = imageSize.width / 1500 / 2 + "rem";
 
@@ -22,16 +24,16 @@ export const InteractiveMap = ({ profile, campaignId, mapUrl, isLoaded, setIsLoa
 		e.preventDefault();
 		if (!editMode) {
 			setRevealPOI(false);
+			setEditPOI(false);
 			return;
 		}
+		setEditPOI(true);
 		let calcCoords = {
 			x: (e.nativeEvent.offsetX - hitbox / 2) / imageSize.width,
-			y: (e.nativeEvent.offsetY - hitbox / 2) / imageSize.height,
-			name: POIName,
+			y: (e.nativeEvent.offsetY - hitbox / 2) / imageSize.height
 		};
 
-		setCoords([...coords, calcCoords]);
-		localStorage.setItem(campaignId, JSON.stringify([...coords, calcCoords]));
+		setCurrentCoordinates({ ...currentCoordinates, ...calcCoords });
 	};
 
 	const handleLoad = (e) => {
@@ -41,13 +43,13 @@ export const InteractiveMap = ({ profile, campaignId, mapUrl, isLoaded, setIsLoa
 
 	const handleDelete = () => {
 		localStorage.removeItem(campaignId);
-		setCoords([]);
+		setPOIs([]);
 	};
 
 	const submitCoordinates = async () => {
 		const { data, error } = await supabase
 			.from("campaigns")
-			.update([{ poi: [...coords] }])
+			.update([{ poi: [...pois] }])
 			.eq("id", campaignId)
 			.select();
 	};
@@ -61,12 +63,17 @@ export const InteractiveMap = ({ profile, campaignId, mapUrl, isLoaded, setIsLoa
 		return [...data[0].poi];
 	};
 
-	const handleSetCoords = async () => {
-		setCoords(JSON.parse(localStorage.getItem(campaignId)) || (await getCoordinates()));
+	const handleSetPOIs = async () => {
+		setPOIs(JSON.parse(localStorage.getItem(campaignId)) || (await getCoordinates()));
 	};
 
+	const handleSetEditMode = () => {
+		setEditMode(!editMode);
+		setRevealPOI(false);
+	}
+
 	useEffect(() => {
-		handleSetCoords();
+		handleSetPOIs();
 	}, []);
 
 	useEffect(() => {
@@ -92,20 +99,9 @@ export const InteractiveMap = ({ profile, campaignId, mapUrl, isLoaded, setIsLoa
 					<button className="btn btn-ghost" onClick={() => submitCoordinates()}>
 						Save
 					</button>
-					<button className={`btn btn-ghost`} onClick={() => setEditMode(!editMode)}>
+					<button className={`btn btn-ghost`} onClick={handleSetEditMode}>
 						{!editMode ? "Edit Mode" : "Done"}
 					</button>
-					{editMode && (
-						<>
-							<input
-								type="text"
-								value={POIName}
-								onChange={(e) => setPOIName(e.target.value)}
-								placeholder="POI name"
-								className="text-neutral-content"
-							/>
-						</>
-					)}
 				</div>
 			)}
 
@@ -118,11 +114,11 @@ export const InteractiveMap = ({ profile, campaignId, mapUrl, isLoaded, setIsLoa
 					onLoad={handleLoad}
 					id="map"
 				/>
-				{coords.map((coord, idx) => {
+				{pois.map((poi, idx) => {
 					return (
 						<div key={idx}>
 							<POI
-								coord={coord}
+								poi={poi}
 								imageSize={imageSize}
 								setRevealPOI={setRevealPOI}
 								hitbox={hitbox}
@@ -140,6 +136,16 @@ export const InteractiveMap = ({ profile, campaignId, mapUrl, isLoaded, setIsLoa
 				>
 					<POInfo />
 				</div>
+
+				{editMode && (
+					<div
+						className={`absolute flex flex-col rounded-tl-xl rounded-bl-xl px-4 py-10 gap-20 top-0 right-0 h-full bg-black bg-opacity-50 w-1/5 scale-x-0 opacity-0 origin-right transition-all duration-[250ms] ${
+							editPOI && "scale-x-100 opacity-100"
+						}`}
+					>
+						<POIEdit currentCoordinates={currentCoordinates} pois={pois} setPOIs={setPOIs} campaignId={campaignId} />
+					</div>
+				)}
 			</div>
 		</>
 	);

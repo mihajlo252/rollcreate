@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { poiChange } from "../../../redux/poi";
 import { useOutletContext } from "react-router-dom";
 
-export const POI = ({ coord, imageSize, hitbox, editMode, setRevealPOI, poiCircleInner, poiCircleOuter }) => {
+export const POI = ({ poi, imageSize, hitbox, editMode, setRevealPOI, poiCircleInner, poiCircleOuter }) => {
 	const [isHover, setIsHover] = useState(false);
 
 	const { dispatch } = useOutletContext();
@@ -11,16 +11,16 @@ export const POI = ({ coord, imageSize, hitbox, editMode, setRevealPOI, poiCircl
 
 	const handleClick = (e) => {
 		e.preventDefault();
-		dispatch(poiChange(coord));
+		dispatch(poiChange(poi));
 		setRevealPOI(true);
-		console.log(coord);
+		console.log(poi);
 	};
 
 	return (
 		<button
 			style={{
-				left: coord.x * imageSize.width,
-				top: coord.y * imageSize.height,
+				left: poi.x * imageSize.width,
+				top: poi.y * imageSize.height,
 				width: hitbox,
 				height: hitbox,
 			}}
@@ -30,13 +30,13 @@ export const POI = ({ coord, imageSize, hitbox, editMode, setRevealPOI, poiCircl
 			onClick={handleClick}
 		>
 			<div
-				className={`grid place-items-center opacity-0 transition-opacity border-2 border-red-500 rounded-full text-balance ${
+				className={`grid place-items-center opacity-0 transition-opacity border-[1px] border-red-500 rounded-full text-balance ${
 					isHover && "opacity-100"
 				}`}
-				style={{ width: poiCircleOuter, aspectRatio: 1 }}
+				style={{ width: poiCircleOuter, height: poiCircleOuter }}
 			>
 
-				<div className="rounded-full bg-red-500" style={{ width: poiCircleInner, aspectRatio: 1 }}></div>
+				<div className="rounded-full bg-red-500" style={{ width: poiCircleInner, height: poiCircleInner }}></div>
 			</div>
 		</button>
 	);
