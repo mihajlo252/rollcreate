@@ -13,7 +13,6 @@ export const POI = ({ poi, imageSize, hitbox, editMode, setRevealPOI, poiCircleI
 		e.preventDefault();
 		dispatch(poiChange(poi));
 		setRevealPOI(true);
-		console.log(poi);
 	};
 
 	return (

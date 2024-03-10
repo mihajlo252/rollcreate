@@ -5,10 +5,6 @@ export const POInfo = () => {
 
 	const poi = useSelector((state) => state.poi.poi);
 
-	// useEffect(() => {
-	// 	console.log(poi);
-	// }, [])
-
 	return (
 		<>
 			<h2 className="self-center text-3xl text-primary">{poi.name}</h2>
