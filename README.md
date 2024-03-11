@@ -3,7 +3,8 @@
 
 Web application in which the user can create their own character in the D&D universe
 
-new link: https://mihajlo252.github.io/rollcreate
+new link: https://mihajlo252.github.io/rollcreate (previously hosted on netlify)
+find out more on: https://mihajlo252.github.io
 
 
 
