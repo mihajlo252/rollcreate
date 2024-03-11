@@ -1,7 +1,7 @@
 import React from "react";
 import { Form } from "react-router-dom";
 
-export const POIEdit = ({ setPOIs, pois, currentCoordinates, campaignId }) => {
+export const POICreate = ({ setPOIs, pois, currentCoordinates, campaignId }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 

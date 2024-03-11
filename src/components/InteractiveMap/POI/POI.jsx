@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { poiChange } from "../../../redux/poi";
 import { useOutletContext } from "react-router-dom";
 
-export const POI = ({ poi, imageSize, hitbox, editMode, setRevealPOI, poiCircleInner, poiCircleOuter }) => {
+export const POI = ({ poi, imageSize, hitbox, createMode, setRevealPOI, poiCircleInner, poiCircleOuter, setCreatePOI }) => {
 	const [isHover, setIsHover] = useState(false);
 
 	const { dispatch } = useOutletContext();
@@ -13,6 +13,7 @@ export const POI = ({ poi, imageSize, hitbox, editMode, setRevealPOI, poiCircleI
 		e.preventDefault();
 		dispatch(poiChange(poi));
 		setRevealPOI(true);
+		setCreatePOI(false);
 	};
 
 	return (
@@ -23,7 +24,7 @@ export const POI = ({ poi, imageSize, hitbox, editMode, setRevealPOI, poiCircleI
 				width: hitbox,
 				height: hitbox,
 			}}
-			className={`absolute grid place-items-center ${editMode && "bg-black"} bg-opacity-40`}
+			className={`absolute grid place-items-center ${createMode && "bg-black"} bg-opacity-40`}
 			onMouseOver={() => setIsHover(true)}
 			onMouseLeave={() => setIsHover(false)}
 			onClick={handleClick}
