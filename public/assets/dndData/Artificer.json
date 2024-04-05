@@ -1,0 +1,109 @@
+{
+  "Artificer": {
+		"infusions": [
+			{
+				"name": "Enhanced Arcane Focus",
+				"item": "Item: A rod, staff, or wand (requires attunement)",
+				"description": "While holding this item, a creature gains a +1 bonus to spell attack rolls. In addition, the creature ignores half cover when making a spell attack. The bonus increases to +2 when you reach 10th level in this class."
+			},
+			{
+				"name": "Enhanced Defence",
+				"item": "Item: A suit of armor or a shield",
+				"description": "A creature gains a +1 bonus to Armor Class while wearing (armor) or wielding (shield) the infused item. The bonus increases to +2 when you reach 10th level in this class."
+			},
+			{
+				"name": "Enhanced Weapon",
+				"item": "Item: A simple or martial weapon",
+				"description": "This magic weapon grants a +1 bonus to attack and damage rolls made with it. The bonus increases to +2 when you reach 10th level in this class."
+			},
+			{
+				"name": "Repeating Shot",
+				"item": "Item: A simple or martial weapon with the ammunition property (requires attunement)",
+				"description": "This magic weapon grants a +1 bonus to attack and damage rolls made with it when it's used to make a ranged attack, and it ignores the loading property if it has it. If you load no ammunition in the weapon, it produces its own, automatically creating one piece of magic ammunition when you make a ranged attack with it. The ammunition created by the weapon vanishes the instant after it hits or misses a target."
+			},
+			{
+				"name": "Replicate Magic Item",
+				"item": {
+					"level_2": [
+						{ "name": "Alchemy jug", "attunement": false },
+						{ "name": "Armblade", "attunement": true },
+						{ "name": "Bag of holding", "attunement": false },
+						{ "name": "Cap of water breathing", "attunement": false },
+						{ "name": "Goggles of night", "attunement": false },
+						{ "name": "Prosthetic limb", "attunement": true },
+						{ "name": "Rope of climbing", "attunement": false },
+						{ "name": "Sending stones", "attunement": false },
+						{ "name": "Wand of magic detection", "attunement": false },
+						{ "name": "Wand of secrets", "attunement": false }
+					],
+					"level_6": [
+						{ "name": "Boots of elvenkind", "attunement": false },
+						{ "name": "Cloak of elvenkind", "attunement": true },
+						{ "name": "Cloak of the manta ray", "attunement": false },
+						{ "name": "Eyes of charming", "attunement": true },
+						{ "name": "Gloves of thievery", "attunement": false },
+						{ "name": "Lantern of revealing", "attunement": false },
+						{ "name": "Pipes of haunting", "attunement": false },
+						{ "name": "Ring of water walking", "attunement": false },
+						{ "name": "Wand of sheath", "attunement": true }
+					],
+					"level_10": [
+						{ "name": "Boots of striding and springing", "attunement": true },
+						{ "name": "Boots of the winterlands", "attunement": true },
+						{ "name": "Bracers of archery", "attunement": true },
+						{ "name": "Brooch of shielding", "attunement": true },
+						{ "name": "Cloak of protection", "attunement": true },
+						{ "name": "Eyes of the eagle", "attunement": true },
+						{ "name": "Gauntlets of ogre power", "attunement": true },
+						{ "name": "Gloves of missile snaring", "attunement": true },
+						{ "name": "Gloves of swimming and climbing", "attunement": true },
+						{ "name": "Hat of disguise", "attunement": true },
+						{ "name": "Headband of intellect", "attunement": true },
+						{ "name": "Helm of telepathy", "attunement": true },
+						{ "name": "Medallion of thoughts", "attunement": true },
+						{ "name": "Peria pt of wound closure", "attunement": true },
+						{ "name": "Pipes of the sewers", "attunement": true },
+						{ "name": "Quiver of Ehlonna", "attunement": false },
+						{ "name": "Ring of jumping", "attunement": true },
+						{ "name": "Ring of mind shielding", "attunement": true },
+						{ "name": "Slippers of spider climbing", "attunement": true },
+						{ "name": "Ventilating lung", "attunement": true },
+						{ "name": "Winged boots", "attunement": true }
+					],
+					"level_14": [
+						{ "name": "Amulet of health", "attunement": true },
+						{ "name": "Arcane propulsion arm", "attunement": true },
+						{ "name": "Belt of hill giant strength", "attunement": true },
+						{ "name": "Boots of levitation", "attunement": true },
+						{ "name": "Boots of speed", "attunement": true },
+						{ "name": "Bracers of defense", "attunement": true },
+						{ "name": "Cloak of the bat", "attunement": true },
+						{ "name": "Dimensional shackles", "attunement": false },
+						{ "name": "Gem of seeing", "attunement": true },
+						{ "name": "Horn of blasting", "attunement": false },
+						{ "name": "Ring of free action", "attunement": true },
+						{ "name": "Ring of protection", "attunement": true },
+						{ "name": "Ring of the ram", "attunement": true }
+					]
+				},
+				"description": "Using this infusion, you replicate a particular magic item. You can learn this infusion multiple times; each time you do so, choose a magic item that you can make with it, picking from the Replicable Items tables below. A table's title tells you the level you must be in the class to choose an item from the table. In the tables, an item's entry tells you whether the item requires attunement. See the item's description in the Dungeon Master's Guide for more information about it, including the type of object required for its making. If you have Xanathar's Guide to Everything, you can choose from among the common magic items in that book when you pick a magic item you can replicate with this infusion."
+			},
+			{
+				"name": "Returning Weapon",
+				"item": "Item: A simple or martial weapon with the thrown property",
+				"description": "This magic weapon grants a +1 bonus to attack and damage rolls made with it, and it returns to the wielder's hand immediately after it is used to make a ranged attack."
+			}
+		],
+		"improvement": [
+			{
+				"name": "Ability Score Improvement",
+				"description": "You can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+			}
+		],
+		"subclasses": [
+			{ "name": "Alchemist", "spells": [] },
+			{ "name": "Artillerist", "spells": [] },
+			{ "name": "Battle Smith", "spells": [] }
+		]
+	}
+}

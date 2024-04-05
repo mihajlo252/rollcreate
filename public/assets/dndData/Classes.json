@@ -1,0 +1,77 @@
+[
+	{
+		"name": "Barbarian",
+		"description": "A tall human tribesman strides through a blizzard, draped in fur and hefting his axe. He laughs as he charges toward the frost giant who dared poach his people's elk herd. A half-orc snarls at the latest challenger to her authority over their savage tribe, ready to break his neck with her bare hands as she did to the last six rivals. Frothing at the mouth, a dwarf slams his helmet into the face of his drow foe, then turns to drive his armored elbow into the gut of another. These barbarians, different as they might be, are defined by their rage: unbridled, unquenchable, and unthinking fury. More than a mere emotion, their anger is the ferocity of a cornered predator, the unrelenting assault of a storm, the churning turmoil of the sea. For some, their rage springs from a communion with fierce animal spirits. Others draw from a roiling reservoir of anger at a world full of pain. For every barbarian, rage is a power that fuels not just a battle frenzy but also uncanny reflexes, resilience, and feats of strength.",
+		"class_features": {
+			"hit_dice": "1d12 per barbarian level",
+			"hit_points_level_one": "12 + Constitution modifier",
+			"hit_points_higher_levels": "1d12 (or 7) + Constitution modifier per barbarian level",
+			"proficiencies": {
+				"armor": ["Light", "Medium", "Shields"],
+				"weapons": ["Simple", "Martial"],
+				"tools": ["None"],
+				"saving_throws": ["Strength", "Constitution"],
+				"skills": ["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"]
+			},
+			"level_upgrades": [
+				{ "level": "1", "rages": "2", "rage_damage": "+2", "features": ["Rage", "Unarmored Defense"] },
+				{ "level": "2", "rages": "2", "rage_damage": "+2", "features": ["Reckless Attack", "Danger Sense"] },
+				{ "level": "3", "rages": "3", "rage_damage": "+2", "features": ["Primal Path"] },
+				{ "level": "4", "rages": "3", "rage_damage": "+2", "features": ["Ability Score Improvement"] },
+				{ "level": "5", "rages": "3", "rage_damage": "+2", "features": ["Extra Attack", "Fast Movement"] },
+				{ "level": "6", "rages": "4", "rage_damage": "+2", "features": ["Path feature"] },
+				{ "level": "7", "rages": "4", "rage_damage": "+2", "features": ["Feral Instinct"] },
+				{ "level": "8", "rages": "4", "rage_damage": "+2", "features": ["Ability Score Improvement"] },
+				{ "level": "9", "rages": "4", "rage_damage": "+3", "features": ["Brutal Critical (1 die)"] },
+				{ "level": "10", "rages": "4", "rage_damage": "+3", "features": ["Path feature"] },
+				{ "level": "11", "rages": "4", "rage_damage": "+3", "features": ["Relentless Rage"] },
+				{ "level": "12", "rages": "5", "rage_damage": "+3", "features": ["Ability Score Improvement"] },
+				{ "level": "13", "rages": "5", "rage_damage": "+3", "features": ["Brutal Critical (2 dice)"] },
+				{ "level": "14", "rages": "5", "rage_damage": "+3", "features": ["Path feature"] },
+				{ "level": "15", "rages": "5", "rage_damage": "+3", "features": ["Persistent Rage"] },
+				{ "level": "16", "rages": "5", "rage_damage": "+4", "features": ["Ability Score Improvement"] },
+				{ "level": "17", "rages": "6", "rage_damage": "+4", "features": ["Brutal Critical (3 dice)"] },
+				{ "level": "18", "rages": "6", "rage_damage": "+4", "features": ["Indomitable Might"] },
+				{ "level": "19", "rages": "6", "rage_damage": "+4", "features": ["Ability Score Improvement"] },
+				{ "level": "20", "rages": "Unlimited", "rage_damage": "+4", "features": ["Primal Champion"] }
+			],
+			"features": [
+				{
+					"name": "Rage",
+					"description": [
+						"In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action. While raging, you gain the following benefits if you aren't wearing heavy armor:",
+						"You have advantage on Strength checks and Strength saving throws.",
+						"When you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table.",
+						"You have resistance to bludgeoning, piercing, and slashing damage.",
+						"If you are able to cast spells, you can't cast them or concentrate on them while raging. Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action. Once you have raged the number of times shown for your barbarian level in the Rages column of the Barbarian table, you must finish a long rest before you can rage again."
+					]
+				},
+				{ "name": "Unarmored Defense", "description": [] },
+				{ "name": "Reckless Attack", "description": [] },
+				{ "name": "Danger Sense", "description": [] },
+				{ "name": "Primal Path", "description": [] },
+				{ "name": "Ability Score Improvement", "description": [] },
+				{ "name": "Extra Attack", "description": [] },
+				{ "name": "Fast Movement", "description": [] },
+				{ "name": "Path feature", "description": [] },
+				{ "name": "Feral Instinct", "description": [] },
+				{ "name": "Brutal Critical", "description": [] },
+				{ "name": "Relentless Rage", "description": [] },
+				{ "name": "Persistent Rage", "description": [] },
+				{ "name": "Indomitable Might", "description": [] },
+				{ "name": "Primal Champion", "description": [] }
+			]
+		}
+	},
+	{ "name": "Bard", "data": {} },
+	{ "name": "Cleric", "data": {} },
+	{ "name": "Druid", "data": {} },
+	{ "name": "Fighter", "data": {} },
+	{ "name": "Monk", "data": {} },
+	{ "name": "Paladin", "data": {} },
+	{ "name": "Ranger", "data": {} },
+	{ "name": "Rogue", "data": {} },
+	{ "name": "Sorcerer", "data": {} },
+	{ "name": "Warlock", "data": {} },
+	{ "name": "Wizard", "data": {} }
+]
