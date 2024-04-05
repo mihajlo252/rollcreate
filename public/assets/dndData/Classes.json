@@ -1,248 +1,443 @@
 [
-    {
-        "name": "Barbarian",
-        "description": "A tall human tribesman strides through a blizzard, draped in fur and hefting his axe. He laughs as he charges toward the frost giant who dared poach his people's elk herd. A half-orc snarls at the latest challenger to her authority over their savage tribe, ready to break his neck with her bare hands as she did to the last six rivals. Frothing at the mouth, a dwarf slams his helmet into the face of his drow foe, then turns to drive his armored elbow into the gut of another. These barbarians, different as they might be, are defined by their rage: unbridled, unquenchable, and unthinking fury. More than a mere emotion, their anger is the ferocity of a cornered predator, the unrelenting assault of a storm, the churning turmoil of the sea. For some, their rage springs from a communion with fierce animal spirits. Others draw from a roiling reservoir of anger at a world full of pain. For every barbarian, rage is a power that fuels not just a battle frenzy but also uncanny reflexes, resilience, and feats of strength.",
-        "class_features": {
-            "hit_dice": "1d12 per barbarian level",
-            "hit_points_level_one": "12 + Constitution modifier",
-            "hit_points_higher_levels": "1d12 (or 7) + Constitution modifier per barbarian level",
-            "proficiencies": {
-                "armor": ["Light", "Medium", "Shields"],
-                "weapons": ["Simple", "Martial"],
-                "tools": ["None"],
-                "saving_throws": ["Strength", "Constitution"],
-                "skills": [
-                    "Animal Handling",
-                    "Athletics",
-                    "Intimidation",
-                    "Nature",
-                    "Perception",
-                    "Survival"
-                ]
-            },
-            "level_upgrades": [
-                {
-                    "level": "1",
-                    "rages": "2",
-                    "rage_damage": "+2",
-                    "features": ["Rage", "Unarmored Defense"]
-                },
-                {
-                    "level": "2",
-                    "rages": "2",
-                    "rage_damage": "+2",
-                    "features": ["Reckless Attack", "Danger Sense"]
-                },
-                {
-                    "level": "3",
-                    "rages": "3",
-                    "rage_damage": "+2",
-                    "features": ["Primal Path"]
-                },
-                {
-                    "level": "4",
-                    "rages": "3",
-                    "rage_damage": "+2",
-                    "features": ["Ability Score Improvement"]
-                },
-                {
-                    "level": "5",
-                    "rages": "3",
-                    "rage_damage": "+2",
-                    "features": ["Extra Attack", "Fast Movement"]
-                },
-                {
-                    "level": "6",
-                    "rages": "4",
-                    "rage_damage": "+2",
-                    "features": ["Path feature"]
-                },
-                {
-                    "level": "7",
-                    "rages": "4",
-                    "rage_damage": "+2",
-                    "features": ["Feral Instinct"]
-                },
-                {
-                    "level": "8",
-                    "rages": "4",
-                    "rage_damage": "+2",
-                    "features": ["Ability Score Improvement"]
-                },
-                {
-                    "level": "9",
-                    "rages": "4",
-                    "rage_damage": "+3",
-                    "features": ["Brutal Critical (1 die)"]
-                },
-                {
-                    "level": "10",
-                    "rages": "4",
-                    "rage_damage": "+3",
-                    "features": ["Path feature"]
-                },
-                {
-                    "level": "11",
-                    "rages": "4",
-                    "rage_damage": "+3",
-                    "features": ["Relentless Rage"]
-                },
-                {
-                    "level": "12",
-                    "rages": "5",
-                    "rage_damage": "+3",
-                    "features": ["Ability Score Improvement"]
-                },
-                {
-                    "level": "13",
-                    "rages": "5",
-                    "rage_damage": "+3",
-                    "features": ["Brutal Critical (2 dice)"]
-                },
-                {
-                    "level": "14",
-                    "rages": "5",
-                    "rage_damage": "+3",
-                    "features": ["Path feature"]
-                },
-                {
-                    "level": "15",
-                    "rages": "5",
-                    "rage_damage": "+3",
-                    "features": ["Persistent Rage"]
-                },
-                {
-                    "level": "16",
-                    "rages": "5",
-                    "rage_damage": "+4",
-                    "features": ["Ability Score Improvement"]
-                },
-                {
-                    "level": "17",
-                    "rages": "6",
-                    "rage_damage": "+4",
-                    "features": ["Brutal Critical (3 dice)"]
-                },
-                {
-                    "level": "18",
-                    "rages": "6",
-                    "rage_damage": "+4",
-                    "features": ["Indomitable Might"]
-                },
-                {
-                    "level": "19",
-                    "rages": "6",
-                    "rage_damage": "+4",
-                    "features": ["Ability Score Improvement"]
-                },
-                {
-                    "level": "20",
-                    "rages": "Unlimited",
-                    "rage_damage": "+4",
-                    "features": ["Primal Champion"]
-                }
-            ],
-            "features": [
-                {
-                    "name": "Rage",
-                    "description": [
-                        "In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action. While raging, you gain the following benefits if you aren't wearing heavy armor:",
-                        "You have advantage on Strength checks and Strength saving throws.",
-                        "When you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table.",
-                        "You have resistance to bludgeoning, piercing, and slashing damage.",
-                        "If you are able to cast spells, you can't cast them or concentrate on them while raging. Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action. Once you have raged the number of times shown for your barbarian level in the Rages column of the Barbarian table, you must finish a long rest before you can rage again."
-                    ]
-                },
-                {
-                    "name": "Unarmored Defense",
-                    "description": "While you are not wearing any armor, your Armor Class equals 10 + your Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit."
-                },
-                {
-                    "name": "Reckless Attack",
-                    "description": "Starting at 2nd level, you can throw aside all concern for defense to attack with fierce desperation. When you make your first attack on your turn, you can decide to attack recklessly. Doing so gives you advantage on melee weapon attack rolls using Strength during this turn, but attack rolls against you have advantage until your next turn."
-                },
-                {
-                    "name": "Danger Sense",
-                    "description": "At 2nd level, you gain an uncanny sense of when things nearby aren't as they should be, giving you an edge when you dodge away from danger. You have advantage on Dexterity saving throws against effects that you can see, such as traps and spells. To gain this benefit, you can't be blinded, deafened, or incapacitated."
-                },
-                {
-                    "name": "Primal Path",
-                    "description": "At 3rd level, you choose a path that shapes the nature of your rage. Choose the Path of the Berserker or the Path of the Totem Warrior, both detailed at the end of the class description. Your choice grants you features at 3rd level and again at 6th, 10th, and 14th levels."
-                },
-                {
-                    "name": "Ability Score Improvement",
-                    "description": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
-                },
-                {
-                    "name": "Extra Attack",
-                    "description": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
-                },
-                {
-                    "name": "Fast Movement",
-                    "description": "Starting at 5th level, your speed increases by 10 feet while you aren't wearing heavy armor."
-                },
-                { "name": "Path feature", "description": "" },
-                {
-                    "name": "Feral Instinct",
-                    "description": "By 7th level, your instincts are so honed that you have advantage on initiative rolls. Additionally, if you are surprised at the beginning of combat and aren't incapacitated, you can act normally on your first turn, but only if you enter your rage before doing anything else on that turn."
-                },
-                {
-                    "name": "Brutal Critical",
-                    "description": "Beginning at 9th level, you can roll one additional weapon damage die when determining the extra damage for a critical hit with a melee attack. This increases to two additional dice at 13th level and three additional dice at 17th level."
-                },
-                {
-                    "name": "Relentless Rage",
-                    "description": "Starting at 11th level, your rage can keep you fighting despite grievous wounds. If you drop to 0 hit points while you're raging and don't die outright, you can make a DC 10 Constitution saving throw. If you succeed, you drop to 1 hit point instead. Each time you use this feature after the first, the DC increases by 5. When you finish a short or long rest, the DC resets to 10."
-                },
-                {
-                    "name": "Persistent Rage",
-                    "description": "Beginning at 15th level, your rage is so fierce that it ends early only if you fall unconscious or if you choose to end"
-                },
-                {
-                    "name": "Indomitable Might",
-                    "description": "Beginning at 18th level, if your total for a Strength check is less than your Strength score, you can use that score in place of the total."
-                },
-                {
-                    "name": "Primal Champion",
-                    "description": "At 20th level, you embody the power of the wilds. Your Strength and Constitution scores increase by 4. Your maximum for those scores is now 24."
-                }
-            ],
-            "paths": [
-                {
-                    "name": "Parth of the Berserker",
-                    "desc": "For some barbarians, rage is a means to an end— that end being violence. The Path of the Berserker is a path of untrammeled fury, slick with blood. As you enter the berserker's rage, you thrill in the chaos of battle, heedless of your own health or well-being.",
-                    "abilities": [
-                        {
-                            "name": "Frenzy",
-                            "description": "Starting when you choose this path at 3rd level, you can go into a frenzy when you rage. If you do so, for the duration of your rage you can make a single melee weapon attack as a bonus action on each of your turns after this one. When your rage ends, you suffer one level of exhaustion (as described in appendix PH-A)."
-                        },
-                        {
-                            "name": "Mindless Rage",
-                            "description": "Beginning at 6th level, you can't be charmed or frightened while raging. If you are charmed or frightened when you enter your rage, the effect is suspended for the duration of the rage."
-                        },
-                        {
-                            "name": "Intimidating Presence",
-                            "description": "Beginning at 10th level, you can use your action to frighten someone with your menacing presence. When you do so, choose one creature that you can see within 30 feet of you. If the creature can see or hear you, it must succeed on a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Charisma modifier) or be frightened of you until the end of your next turn. On subsequent turns, you can use your action to extend the duration of this effect on the frightened creature until the end of your next turn. This effect ends if the creature ends its turn out of line of sight or more than 60 feet away from you. If the creature succeeds on its saving throw, you can't use this feature on that creature again for 24 hours."
-                        },
-                        {
-                            "name": "Retaliation",
-                            "description": "Starting at 14th level, when you take damage from a creature that is within 5 feet of you, you can use your reaction to make a melee weapon attack against that creature."
-                        }
+	{
+		"name": "Barbarian",
+		"description": "A tall human tribesman strides through a blizzard, draped in fur and hefting his axe. He laughs as he charges toward the frost giant who dared poach his people's elk herd. A half-orc snarls at the latest challenger to her authority over their savage tribe, ready to break his neck with her bare hands as she did to the last six rivals. Frothing at the mouth, a dwarf slams his helmet into the face of his drow foe, then turns to drive his armored elbow into the gut of another. These barbarians, different as they might be, are defined by their rage: unbridled, unquenchable, and unthinking fury. More than a mere emotion, their anger is the ferocity of a cornered predator, the unrelenting assault of a storm, the churning turmoil of the sea. For some, their rage springs from a communion with fierce animal spirits. Others draw from a roiling reservoir of anger at a world full of pain. For every barbarian, rage is a power that fuels not just a battle frenzy but also uncanny reflexes, resilience, and feats of strength.",
+		"class_features": {
+			"hit_dice": "1d12 per barbarian level",
+			"hit_points_level_one": "12 + Constitution modifier",
+			"hit_points_higher_levels": "1d12 (or 7) + Constitution modifier per barbarian level after 1st",
+			"proficiencies": {
+				"armor": ["Light", "Medium", "Shields"],
+				"weapons": ["Simple", "Martial"],
+				"tools": ["None"],
+				"saving_throws": ["Strength", "Constitution"],
+				"skills": ["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"]
+			},
+			"level_upgrades": [
+				{
+					"level": "1",
+					"rages": "2",
+					"rage_damage": "+2",
+					"features": ["Rage", "Unarmored Defense"]
+				},
+				{
+					"level": "2",
+					"rages": "2",
+					"rage_damage": "+2",
+					"features": ["Reckless Attack", "Danger Sense"]
+				},
+				{
+					"level": "3",
+					"rages": "3",
+					"rage_damage": "+2",
+					"features": ["Primal Path"]
+				},
+				{
+					"level": "4",
+					"rages": "3",
+					"rage_damage": "+2",
+					"features": ["Ability Score Improvement"]
+				},
+				{
+					"level": "5",
+					"rages": "3",
+					"rage_damage": "+2",
+					"features": ["Extra Attack", "Fast Movement"]
+				},
+				{
+					"level": "6",
+					"rages": "4",
+					"rage_damage": "+2",
+					"features": ["Path feature"]
+				},
+				{
+					"level": "7",
+					"rages": "4",
+					"rage_damage": "+2",
+					"features": ["Feral Instinct"]
+				},
+				{
+					"level": "8",
+					"rages": "4",
+					"rage_damage": "+2",
+					"features": ["Ability Score Improvement"]
+				},
+				{
+					"level": "9",
+					"rages": "4",
+					"rage_damage": "+3",
+					"features": ["Brutal Critical (1 die)"]
+				},
+				{
+					"level": "10",
+					"rages": "4",
+					"rage_damage": "+3",
+					"features": ["Path feature"]
+				},
+				{
+					"level": "11",
+					"rages": "4",
+					"rage_damage": "+3",
+					"features": ["Relentless Rage"]
+				},
+				{
+					"level": "12",
+					"rages": "5",
+					"rage_damage": "+3",
+					"features": ["Ability Score Improvement"]
+				},
+				{
+					"level": "13",
+					"rages": "5",
+					"rage_damage": "+3",
+					"features": ["Brutal Critical (2 dice)"]
+				},
+				{
+					"level": "14",
+					"rages": "5",
+					"rage_damage": "+3",
+					"features": ["Path feature"]
+				},
+				{
+					"level": "15",
+					"rages": "5",
+					"rage_damage": "+3",
+					"features": ["Persistent Rage"]
+				},
+				{
+					"level": "16",
+					"rages": "5",
+					"rage_damage": "+4",
+					"features": ["Ability Score Improvement"]
+				},
+				{
+					"level": "17",
+					"rages": "6",
+					"rage_damage": "+4",
+					"features": ["Brutal Critical (3 dice)"]
+				},
+				{
+					"level": "18",
+					"rages": "6",
+					"rage_damage": "+4",
+					"features": ["Indomitable Might"]
+				},
+				{
+					"level": "19",
+					"rages": "6",
+					"rage_damage": "+4",
+					"features": ["Ability Score Improvement"]
+				},
+				{
+					"level": "20",
+					"rages": "Unlimited",
+					"rage_damage": "+4",
+					"features": ["Primal Champion"]
+				}
+			],
+			"features": [
+				{
+					"name": "Rage",
+					"description": [
+						"In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action. While raging, you gain the following benefits if you aren't wearing heavy armor:",
+						"You have advantage on Strength checks and Strength saving throws.",
+						"When you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table.",
+						"You have resistance to bludgeoning, piercing, and slashing damage.",
+						"If you are able to cast spells, you can't cast them or concentrate on them while raging. Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action. Once you have raged the number of times shown for your barbarian level in the Rages column of the Barbarian table, you must finish a long rest before you can rage again."
 					]
-                    
-                }
-			]        
-    	}
+				},
+				{
+					"name": "Unarmored Defense",
+					"description": "While you are not wearing any armor, your Armor Class equals 10 + your Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit."
+				},
+				{
+					"name": "Reckless Attack",
+					"description": "Starting at 2nd level, you can throw aside all concern for defense to attack with fierce desperation. When you make your first attack on your turn, you can decide to attack recklessly. Doing so gives you advantage on melee weapon attack rolls using Strength during this turn, but attack rolls against you have advantage until your next turn."
+				},
+				{
+					"name": "Danger Sense",
+					"description": "At 2nd level, you gain an uncanny sense of when things nearby aren't as they should be, giving you an edge when you dodge away from danger. You have advantage on Dexterity saving throws against effects that you can see, such as traps and spells. To gain this benefit, you can't be blinded, deafened, or incapacitated."
+				},
+				{
+					"name": "Primal Path",
+					"description": "At 3rd level, you choose a path that shapes the nature of your rage. Choose the Path of the Berserker or the Path of the Totem Warrior, both detailed at the end of the class description. Your choice grants you features at 3rd level and again at 6th, 10th, and 14th levels."
+				},
+				{
+					"name": "Ability Score Improvement",
+					"description": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+				},
+				{
+					"name": "Extra Attack",
+					"description": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
+				},
+				{
+					"name": "Fast Movement",
+					"description": "Starting at 5th level, your speed increases by 10 feet while you aren't wearing heavy armor."
+				},
+				{ "name": "Path feature", "description": "" },
+				{
+					"name": "Feral Instinct",
+					"description": "By 7th level, your instincts are so honed that you have advantage on initiative rolls. Additionally, if you are surprised at the beginning of combat and aren't incapacitated, you can act normally on your first turn, but only if you enter your rage before doing anything else on that turn."
+				},
+				{
+					"name": "Brutal Critical",
+					"description": "Beginning at 9th level, you can roll one additional weapon damage die when determining the extra damage for a critical hit with a melee attack. This increases to two additional dice at 13th level and three additional dice at 17th level."
+				},
+				{
+					"name": "Relentless Rage",
+					"description": "Starting at 11th level, your rage can keep you fighting despite grievous wounds. If you drop to 0 hit points while you're raging and don't die outright, you can make a DC 10 Constitution saving throw. If you succeed, you drop to 1 hit point instead. Each time you use this feature after the first, the DC increases by 5. When you finish a short or long rest, the DC resets to 10."
+				},
+				{
+					"name": "Persistent Rage",
+					"description": "Beginning at 15th level, your rage is so fierce that it ends early only if you fall unconscious or if you choose to end"
+				},
+				{
+					"name": "Indomitable Might",
+					"description": "Beginning at 18th level, if your total for a Strength check is less than your Strength score, you can use that score in place of the total."
+				},
+				{
+					"name": "Primal Champion",
+					"description": "At 20th level, you embody the power of the wilds. Your Strength and Constitution scores increase by 4. Your maximum for those scores is now 24."
+				}
+			],
+			"paths": [
+				{
+					"name": "Path of the Berserker",
+					"desc": "For some barbarians, rage is a means to an end— that end being violence. The Path of the Berserker is a path of untrammeled fury, slick with blood. As you enter the berserker's rage, you thrill in the chaos of battle, heedless of your own health or well-being.",
+					"abilities": [
+						{
+							"name": "Frenzy",
+							"description": "Starting when you choose this path at 3rd level, you can go into a frenzy when you rage. If you do so, for the duration of your rage you can make a single melee weapon attack as a bonus action on each of your turns after this one. When your rage ends, you suffer one level of exhaustion (as described in appendix PH-A)."
+						},
+						{
+							"name": "Mindless Rage",
+							"description": "Beginning at 6th level, you can't be charmed or frightened while raging. If you are charmed or frightened when you enter your rage, the effect is suspended for the duration of the rage."
+						},
+						{
+							"name": "Intimidating Presence",
+							"description": "Beginning at 10th level, you can use your action to frighten someone with your menacing presence. When you do so, choose one creature that you can see within 30 feet of you. If the creature can see or hear you, it must succeed on a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Charisma modifier) or be frightened of you until the end of your next turn. On subsequent turns, you can use your action to extend the duration of this effect on the frightened creature until the end of your next turn. This effect ends if the creature ends its turn out of line of sight or more than 60 feet away from you. If the creature succeeds on its saving throw, you can't use this feature on that creature again for 24 hours."
+						},
+						{
+							"name": "Retaliation",
+							"description": "Starting at 14th level, when you take damage from a creature that is within 5 feet of you, you can use your reaction to make a melee weapon attack against that creature."
+						}
+					]
+				}
+			]
+		}
 	},
-    { "name": "Bard", "data": {} },
-    { "name": "Cleric", "data": {} },
-    { "name": "Druid", "data": {} },
-    { "name": "Fighter", "data": {} },
-    { "name": "Monk", "data": {} },
-    { "name": "Paladin", "data": {} },
-    { "name": "Ranger", "data": {} },
-    { "name": "Rogue", "data": {} },
-    { "name": "Sorcerer", "data": {} },
-    { "name": "Warlock", "data": {} },
-    { "name": "Wizard", "data": {} }
+	{ "name": "Bard", "data": {} },
+	{ "name": "Cleric", "data": {} },
+	{ "name": "Druid", "data": {} },
+	{ "name": "Fighter", "data": {} },
+	{ "name": "Monk", "data": {} },
+	{ "name": "Paladin", "data": {} },
+	{ "name": "Ranger", "data": {} },
+	{
+		"name": "Rogue",
+		"description": {},
+		"class_features": {
+			"hit_dice": "1d8 per rogue level",
+			"hit_points_level_one": "8 + Constitution modifier",
+			"hit_points_higher_levels": "1d8 (or 5) + Constitution modifier per rogue level after 1st",
+			"proficiencies": {
+				"armor": ["Light"],
+				"weapons": ["Simple", "Hand crossbows", "Longswords", "Rapiers", "Shortswords"],
+				"tools": ["Thieves' tools"],
+				"saving_throws": ["Dexterity", "Intelligence"],
+				"skills": [
+					"Acrobatics",
+					"Athletics",
+					"Deception",
+					"Insight",
+					"Intimidation",
+					"Investigation",
+					"Perception",
+					"Performance",
+					"Persuasion",
+					"Sleight of Hand",
+					"Stealth"
+				]
+			},
+			"level_upgrades": [
+				{
+					"level": "1",
+					"proficiency_bonus": "+2",
+					"sneak_attack": "1d6",
+					"features": ["Expertise", "Sneak Attack", "Thieves' Cant"]
+				},
+				{
+					"level": "2",
+					"proficiency_bonus": "+2",
+					"sneak_attack": "1d6",
+					"features": ["Cunning Action"]
+				},
+				{
+					"level": "3",
+					"proficiency_bonus": "+2",
+					"sneak_attack": "2d6",
+					"features": ["Rougish Archetype feature"]
+				},
+				{
+					"level": "4",
+					"proficiency_bonus": "+2",
+					"sneak_attack": "2d6",
+					"features": ["Ability Score Improvement"]
+				},
+				{
+					"level": "5",
+					"proficiency_bonus": "+3",
+					"sneak_attack": "3d6",
+					"features": ["Uncanny Dodge"]
+				},
+				{
+					"level": "6",
+					"proficiency_bonus": "+3",
+					"sneak_attack": "3d6",
+					"features": ["Expertise"]
+				},
+				{
+					"level": "7",
+					"proficiency_bonus": "+3",
+					"sneak_attack": "4d6",
+					"features": ["Evasion"]
+				},
+				{
+					"level": "8",
+					"proficiency_bonus": "+3",
+					"sneak_attack": "4d6",
+					"features": ["Ability Score Improvement"]
+				},
+				{
+					"level": "9",
+					"proficiency_bonus": "+4",
+					"sneak_attack": "5d6",
+					"features": ["Rougish Archetype feature"]
+				},
+				{
+					"level": "10",
+					"proficiency_bonus": "+4",
+					"sneak_attack": "5d6",
+					"features": ["Ability Score Improvement"]
+				},
+				{
+					"level": "11",
+					"proficiency_bonus": "+4",
+					"sneak_attack": "6d6",
+					"features": ["Reliable Talent"]
+				},
+				{
+					"level": "12",
+					"proficiency_bonus": "+4",
+					"sneak_attack": "6d6",
+					"features": ["Ability Score Improvement"]
+				},
+				{
+					"level": "13",
+					"proficiency_bonus": "+5",
+					"sneak_attack": "7d6",
+					"features": ["Rougish Archetype feature"]
+				},
+				{
+					"level": "14",
+					"proficiency_bonus": "+5",
+					"sneak_attack": "7d6",
+					"features": ["Blindsense"]
+				},
+				{
+					"level": "15",
+					"proficiency_bonus": "+5",
+					"sneak_attack": "8d6",
+					"features": ["Slipery Mind"]
+				},
+				{
+					"level": "16",
+					"proficiency_bonus": "+5",
+					"sneak_attack": "8d6",
+					"features": ["Ability Score Improvement"]
+				},
+				{
+					"level": "17",
+					"proficiency_bonus": "+6",
+					"sneak_attack": "9d6",
+					"features": ["Rougish Archetype feature"]
+				},
+				{
+					"level": "18",
+					"proficiency_bonus": "+6",
+					"sneak_attack": "9d6",
+					"features": ["Elusive"]
+				},
+				{
+					"level": "19",
+					"proficiency_bonus": "+6",
+					"sneak_attack": "10d6",
+					"features": ["Ability Score Improvement"]
+				},
+				{
+					"level": "20",
+					"proficiency_bonus": "+6",
+					"sneak_attack": "10d6",
+					"features": ["Stroke of Luck"]
+				}
+			],
+			"features": [
+				{
+					"name": "Expertise",
+					"description": "At 1st level, choose two of your skill proficiencies, or one of your skill proficiencies and your proficiency with thieves' tools. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies. At 6th level, you can choose two more of your proficiencies (in skills or with thieves' tools) to gain this benefit."
+				},
+				{
+					"name": "Sneak Attack",
+					"description": "Beginning at 1st level, you know how to strike subtly and exploit a foe's distraction. Once per turn, you can deal an extra 1d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon. You don't need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn't incapacitated, and you don't have disadvantage on the attack roll. The amount of the extra damage increases as you gain levels in this class, as shown in the Sneak Attack column of the Rogue table."
+				},
+				{
+					"name": "Thieves' Cant",
+					"description": "During your rogue training you learned thieves' cant, a secret mix of dialect, jargon, and code that allows you to hide messages in seemingly normal conversation. Only another creature that knows thieves' cant understands such messages. It takes four times longer to convey such a message than it does to speak the same idea plainly. In addition, you understand a set of secret signs and symbols used to convey short, simple messages, such as whether an area is dangerous or the territory of a thieves' guild, whether loot is nearby, or whether the people in an area are easy marks or will provide a safe house for thieves on the run"
+				},
+				{
+					"name": "Cunning Action",
+					"description": "Starting at 2nd level, your quick thinking and agility allow you to move and act quickly. You can take a bonus action on each of your turns in combat. This action can be used only to take the Dash, Disengage, or Hide action."
+				},
+				{
+					"name": "Roguish Archetype",
+					"description": "At 3rd level, you choose an archetype that you emulate in the exercise of your rogue abilities, such as Thief. Your archetype choice grants you features at 3rd level and then again at 9th, 13th, and 17th level."
+				},
+				{
+					"name": "Ability Score Improvement",
+					"description": "When you reach 4th level, and again at 8th, 10th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+				},
+				{
+					"name": "Uncanny Dodge",
+					"description": "Starting at 5th level, when an attacker that you can see hits you with an attack, you can use your reaction to halve the attack's damage against you."
+				},
+				{
+					"name": "Evasion",
+					"description": "Beginning at 7th level, you can nimbly dodge out of the way of certain area effects, such as a red dragon's fiery breath or an ice storm spell. When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail."
+				},
+				{
+					"name": "Reliable Talent",
+					"description": "By 11th level, you have refined your chosen skills until they approach perfection. Whenever you make an ability check that lets you add your proficiency bonus, you can treat a d20 roll of 9 or lower as a 10"
+				},
+				{
+					"name": "Blindsense",
+					"description": "Starting at 14th level, if you are able to hear, you are aware of the location of any hidden or invisible creature within 10 feet of you."
+				},
+				{
+					"name": "Slippery Mind",
+					"description": "By 15th level, you have acquired greater mental strength. You gain proficiency in Wisdom saving throws."
+				},
+				{
+					"name": "Elusive",
+					"description": "Beginning at 18th level, you are so evasive that attackers rarely gain the upper hand against you. No attack roll has advantage against you while you aren't incapacitated. "
+				},
+				{
+					"name": "Stroke of Luck",
+					"description": "At 20th level, you have an uncanny knack for succeeding when you need to. If your attack misses a target within range, you can turn the miss into a hit. Alternatively, if you fail an ability check, you can treat the d20 roll as a 20. Once you use this feature, you can't use it again until you finish a short or long rest"
+				}
+			]
+		}
+	},
+	{ "name": "Sorcerer", "data": {} },
+	{ "name": "Warlock", "data": {} },
+	{ "name": "Wizard", "data": {} }
 ]
