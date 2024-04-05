@@ -1,12 +1,15 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
-import { Form } from "react-router-dom";
+import { Form, useLocation } from "react-router-dom";
 import { submitCharacter } from "../../utilities/submitCharacter";
 import { getAllData } from "../../utilities/getAllData";
 import { useSelector } from "react-redux";
 
 export const CreateCharacter = () => {
 	const { userData } = useSelector((state) => state.userData);
+	
+	const { state } = useLocation();
+	
 
 	const [metaData, setMetaData] = useState({
 		name: "",
@@ -47,7 +50,8 @@ export const CreateCharacter = () => {
 	};
 
 	useEffect(() => {
-		handleGetAllCampaigns();
+		handleGetAllCampaigns()
+		console.log(state);
 	}, []);
 
 	return (
@@ -56,13 +60,13 @@ export const CreateCharacter = () => {
 				className="flex flex-col gap-2 text-neutral-content"
 				onSubmit={(e) => handleSubmit(e)}
 			>
-				<label className="label text-neutral-focus">Name</label>
+				<label className="text-neutral-focus label">Name</label>
 				<input
 					name="name"
 					value={metaData.name}
 					onChange={(e) => setMetaData({ ...metaData, name: e.target.value })}
 				/>
-				<label className="label text-neutral-focus">Race</label>
+				<label className="text-neutral-focus label">Race</label>
 				<input
 					name="raceMain"
 					value={metaData.race.main}
@@ -77,7 +81,7 @@ export const CreateCharacter = () => {
 						setMetaData({ ...metaData, race: { ...metaData.race, sub: e.target.value } })
 					}
 				/>
-				<label className="label text-neutral-focus">Class</label>
+				<label className="text-neutral-focus label">Class</label>
 				<input
 					name="classMain"
 					value={metaData.class.main}
@@ -98,7 +102,7 @@ export const CreateCharacter = () => {
 						})
 					}
 				/>
-				<label className="label text-neutral-focus" htmlFor="backstory">
+				<label className="text-neutral-focus label" htmlFor="backstory">
 					Backstory
 				</label>
 				<textarea
@@ -107,13 +111,13 @@ export const CreateCharacter = () => {
 					value={metaData.backstory}
 					onChange={(e) => setMetaData({ ...metaData, backstory: e.target.value })}
 				/>
-				<label className="label text-neutral-focus">Affiliation</label>
+				<label className="text-neutral-focus label">Affiliation</label>
 				<input
 					name="affiliation"
 					value={metaData.affiliation}
 					onChange={(e) => setMetaData({ ...metaData, affiliation: e.target.value })}
 				/>
-				<label className="label text-neutral-focus">Campaign</label>
+				<label className="text-neutral-focus label">Campaign</label>
 				<select onChange={handleSetCampaignId}>
 					{campaigns.map((campaign) => (
 						<option key={campaign.id} value={campaign.id}>
@@ -125,6 +129,11 @@ export const CreateCharacter = () => {
 					Submit
 				</button>
 			</Form>
+			<ul>
+				{state.map((item) => (
+					<li key={item.name}>{item.name}</li>
+				))}
+			</ul>
 		</motion.section>
 	);
 };

@@ -2,23 +2,26 @@ import React, { useEffect, useState } from "react";
 import { getDndData } from "../utilities/getDndData";
 import { motion } from "framer-motion";
 import { pageChange } from "../redux/page";
-import { NavLink, useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import { AnimatedCard } from "../components/AnimatedCard/AnimatedCard";
 
 export const Create = () => {
 	const { dispatch } = useOutletContext();
 
-	// const [classes, setClasses] = useState([]);
+	const navigate = useNavigate()
 
-	// const handleGetClasses = async () => {
-	// 	const type_of_file = "Classes";
-	// 	const res = await getDndData(type_of_file);
-	// 	setClasses(res);
-	// };
+	const [classes, setClasses] = useState([]);
+	const getClasses = async () => {
+		const res = await fetch("assets/dndData/Classes.json")
+		const data = await res.json();
+		console.log(data);
+		setClasses(data);
+	}
+
 
 	useEffect(() => {
-		// handleGetClasses();
 		dispatch(pageChange("create"));
+		getClasses();
 	}, []);
 
 	return (
@@ -27,18 +30,20 @@ export const Create = () => {
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 		>
-			<NavLink to="./character">
+			<button onClick={() => navigate("./character", {state: classes})}>
 				<AnimatedCard
 					text="Create a character"
 					bg="assets/images/background-soldier-portrait-sm.png"
 				/>
-			</NavLink>
-			<NavLink to="./campaign">
+			</button>
+			<button onClick={() => navigate("/campaign")}>
 				<AnimatedCard
 					text="Create a campaign"
 					bg="assets/images/background-soldier-portrait-sm.png"
 				/>
-			</NavLink>
+			</button>
+			{/* <button onClick={getClasses}>Get classes</button>
+			<button onClick={() => console.log(classes)}> Print </button> */}
 		</motion.section>
 	);
 };
