@@ -4,12 +4,14 @@ import { Form, useLocation } from "react-router-dom";
 import { submitCharacter } from "../../utilities/submitCharacter";
 import { getAllData } from "../../utilities/getAllData";
 import { useSelector } from "react-redux";
+import { Class } from "./Class";
+import { Race } from "./Race";
+import { Stats } from "./Stats";
 
 export const CreateCharacter = () => {
 	const { userData } = useSelector((state) => state.userData);
-	
+
 	const { state } = useLocation();
-	
 
 	const [metaData, setMetaData] = useState({
 		name: "",
@@ -34,6 +36,7 @@ export const CreateCharacter = () => {
 	});
 	const [campaigns, setCampaigns] = useState([]);
 	const [campaignId, setCampaignId] = useState("");
+	const [subPage, setSubPage] = useState("race");
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -49,76 +52,38 @@ export const CreateCharacter = () => {
 		setCampaignId(e.target.value);
 	};
 
+	const handleSetSubPage = (e) => {
+		e.preventDefault()
+		setSubPage(e.target.value);
+	}
+
 	useEffect(() => {
-		handleGetAllCampaigns()
+		handleGetAllCampaigns();
 		console.log(state);
 	}, []);
 
+
+
 	return (
-		<motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-			<Form
-				className="flex flex-col gap-2 text-neutral-content"
-				onSubmit={(e) => handleSubmit(e)}
-			>
-				<label className="text-neutral-focus label">Name</label>
-				<input
-					name="name"
-					value={metaData.name}
-					onChange={(e) => setMetaData({ ...metaData, name: e.target.value })}
-				/>
-				<label className="text-neutral-focus label">Race</label>
-				<input
-					name="raceMain"
-					value={metaData.race.main}
-					onChange={(e) =>
-						setMetaData({ ...metaData, race: { ...metaData.race, main: e.target.value } })
-					}
-				/>
-				<input
-					name="raceSub"
-					value={metaData.race.sub}
-					onChange={(e) =>
-						setMetaData({ ...metaData, race: { ...metaData.race, sub: e.target.value } })
-					}
-				/>
-				<label className="text-neutral-focus label">Class</label>
-				<input
-					name="classMain"
-					value={metaData.class.main}
-					onChange={(e) =>
-						setMetaData({
-							...metaData,
-							class: { ...metaData.class, main: e.target.value },
-						})
-					}
-				/>
-				<input
-					name="classSub"
-					value={metaData.class.sub}
-					onChange={(e) =>
-						setMetaData({
-							...metaData,
-							class: { ...metaData.class, sub: e.target.value },
-						})
-					}
-				/>
-				<label className="text-neutral-focus label" htmlFor="backstory">
-					Backstory
-				</label>
-				<textarea
-					name="backstory"
-					id="backstory"
-					value={metaData.backstory}
-					onChange={(e) => setMetaData({ ...metaData, backstory: e.target.value })}
-				/>
-				<label className="text-neutral-focus label">Affiliation</label>
-				<input
-					name="affiliation"
-					value={metaData.affiliation}
-					onChange={(e) => setMetaData({ ...metaData, affiliation: e.target.value })}
-				/>
-				<label className="text-neutral-focus label">Campaign</label>
-				<select onChange={handleSetCampaignId}>
+		<motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex w-full flex-col items-center justify-center gap-20">
+			<header className="flex gap-10">
+				<button value="race" className="btn btn-ghost" onClick={handleSetSubPage}>Race</button>
+				<button value="class" className="btn btn-ghost" onClick={handleSetSubPage}>Class</button>
+				<button value="stats" className="btn btn-ghost" onClick={handleSetSubPage}>Stats</button>
+			</header>
+			{subPage === "class" && (
+				<Class classes={state} />
+			)}
+			{subPage === "race" && (
+				<Race />
+			)}
+			{subPage === "stats" && (
+				<Stats />
+			)}
+
+
+			<Form className="flex flex-col gap-2" onSubmit={(e) => handleSubmit(e)}>
+				<select onChange={handleSetCampaignId} className="select select-bordered w-full max-w-xs">
 					{campaigns.map((campaign) => (
 						<option key={campaign.id} value={campaign.id}>
 							{campaign.campaign_name}
@@ -129,11 +94,7 @@ export const CreateCharacter = () => {
 					Submit
 				</button>
 			</Form>
-			<ul>
-				{state.map((item) => (
-					<li key={item.name}>{item.name}</li>
-				))}
-			</ul>
+			
 		</motion.section>
 	);
 };
