@@ -36,7 +36,7 @@ export const Create = () => {
 					bg="assets/images/background-soldier-portrait-sm.png"
 				/>
 			</button>
-			<button onClick={() => navigate("/campaign")}>
+			<button onClick={() => navigate("./campaign")}>
 				<AnimatedCard
 					text="Create a campaign"
 					bg="assets/images/background-soldier-portrait-sm.png"
