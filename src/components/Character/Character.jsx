@@ -17,7 +17,7 @@ export const Character = () => {
 		dispatch(pageChange("character"));
 	}, []);
 
-	if(!state) return <div>Nothing to see here!</div>
+	if (!state) return <div>Nothing to see here!</div>;
 
 	return (
 		<motion.div
@@ -31,11 +31,19 @@ export const Character = () => {
 					<h2 className="text-2xl text-neutral">
 						{state.race.main}, {state.class.main}
 					</h2>
-					<div className="mt-20 flex w-[30%] flex-col gap-2">
-						{Object.keys(state.stats).map((stat) => (
-							<p key={stat} className="grid grid-cols-2 text-2xl">
-								<span className="w-[50%]">{stat.toUpperCase()}</span>
-								<span>{state.stats[stat]} </span>
+					<div className="w-[40%]">
+						<div className="mt-20 grid grid-cols-4 place-items-center gap-2 text-2xl">
+							<p></p>
+							<p>STAT</p>
+							<p>MOD</p>
+							<p>SAVE</p>
+						</div>
+						{state.stats.map((stat) => (
+							<p key={stat.name} className="grid grid-cols-4 place-items-center gap-2 text-2xl">
+								<span className="place-self-start">{stat.name.toUpperCase()}</span>
+								<span>{stat.value} </span>
+								<span>{stat.mod}</span>
+								<span>{stat.save}</span>
 							</p>
 						))}
 					</div>
@@ -46,7 +54,9 @@ export const Character = () => {
 			</div>
 
 			<p>{state.backstory}</p>
-			<NavLink to="/profile" className="btn btn-ghost" onClick={handleDelete}>Delete</NavLink>
+			<NavLink to="/profile" className="btn btn-ghost" onClick={handleDelete}>
+				Delete
+			</NavLink>
 		</motion.div>
 	);
 };
