@@ -226,7 +226,409 @@
 			]
 		}
 	},
-	{ "name": "Bard", "data": {} },
+	{
+		"name": "Bard",
+		"description": "Humming as she traces her fingers over an ancient monument in a long-forgotten ruin, a half-elf in rugged leathers finds knowledge springing into her mind, conjured forth by the magic of her song—knowledge of the people who constructed the monument and the mythic saga it depicts. A stern human warrior bangs his sword rhythmically against his scale mail, setting the tempo for his war chant and exhorting his companions to bravery and heroism. The magic of his song fortifies and emboldens them. Laughing as she tunes her cittern, a gnome weaves her subtle magic over the assembled nobles, ensuring that her companions' words will be well received. Whether scholar, skald, or scoundrel, a bard weaves magic through words and music to inspire allies, demoralize foes, manipulate minds, create illusions, and even heal wounds.",
+		"class_features": {
+			"hit_dice": "1d8 per bard level",
+			"hit_points_level_one": "8 + Constitution modifier",
+			"hit_points_higher_levels": "1d8 (or 5) + Constitution modifier per bard level after 1st",
+			"proficiencies": {
+				"armor": ["Light"],
+				"weapons": ["Simple", "Hand crossbows", "Longswords", "Rapiers", "Shortswords"],
+				"tools": ["Three musical instruments of your choice"],
+				"saving_throws": ["Dexterity", "Charisma"],
+				"skills": ["Choose any three"]
+			},
+			"level_upgrades": [
+				{
+					"level": "1",
+					"proficiency_bonus": "+2",
+					"cantrips_known": "2",
+					"spells_known": "4",
+					"spell_slots_per_spell_level": [
+						{ "level": "1", "slots": "2" },
+						{ "level": "2", "slots": "" },
+						{ "level": "3", "slots": "" },
+						{ "level": "4", "slots": "" },
+						{ "level": "5", "slots": "" },
+						{ "level": "6", "slots": "" },
+						{ "level": "7", "slots": "" },
+						{ "level": "8", "slots": "" },
+						{ "level": "9", "slots": "" }
+					],
+					"features": ["Spellcasting", "Bardic Inspiration (d6)"]
+				},
+				{
+					"level": "2",
+					"proficiency_bonus": "+2",
+					"cantrips_known": "2",
+					"spells_known": "5",
+					"spell_slots_per_spell_level": [
+						{ "level": "1", "slots": "3" },
+						{ "level": "2", "slots": "" },
+						{ "level": "3", "slots": "" },
+						{ "level": "4", "slots": "" },
+						{ "level": "5", "slots": "" },
+						{ "level": "6", "slots": "" },
+						{ "level": "7", "slots": "" },
+						{ "level": "8", "slots": "" },
+						{ "level": "9", "slots": "" }
+					],
+					"features": ["Jack of All Trades", "Song of Rest (d6)"]
+				},
+				{
+					"level": "3",
+					"proficiency_bonus": "+2",
+					"cantrips_known": "2",
+					"spells_known": "6",
+					"spell_slots_per_spell_level": [
+						{ "level": "1", "slots": "4" },
+						{ "level": "2", "slots": "2" },
+						{ "level": "3", "slots": "" },
+						{ "level": "4", "slots": "" },
+						{ "level": "5", "slots": "" },
+						{ "level": "6", "slots": "" },
+						{ "level": "7", "slots": "" },
+						{ "level": "8", "slots": "" },
+						{ "level": "9", "slots": "" }
+					],
+					"features": ["Bard College", "Expertise"]
+				},
+				{
+					"level": "4",
+					"proficiency_bonus": "+2",
+					"cantrips_known": "3",
+					"spells_known": "7",
+					"spell_slots_per_spell_level": [
+						{ "level": "1", "slots": "4" },
+						{ "level": "2", "slots": "3" },
+						{ "level": "3", "slots": "" },
+						{ "level": "4", "slots": "" },
+						{ "level": "5", "slots": "" },
+						{ "level": "6", "slots": "" },
+						{ "level": "7", "slots": "" },
+						{ "level": "8", "slots": "" },
+						{ "level": "9", "slots": "" }
+					],
+					"features": ["Ability Score Improvement"]
+				},
+				{
+					"level": "5",
+					"proficiency_bonus": "+3",
+					"cantrips_known": "3",
+					"spells_known": "8",
+					"spell_slots_per_spell_level": [
+						{ "level": "1", "slots": "4" },
+						{ "level": "2", "slots": "3" },
+						{ "level": "3", "slots": "2" },
+						{ "level": "4", "slots": "" },
+						{ "level": "5", "slots": "" },
+						{ "level": "6", "slots": "" },
+						{ "level": "7", "slots": "" },
+						{ "level": "8", "slots": "" },
+						{ "level": "9", "slots": "" }
+					],
+					"features": ["Bardic Inspiration (d8)", "Font of Inspiration"]
+				},
+				{
+					"level": "6",
+					"proficiency_bonus": "+3",
+					"cantrips_known": "3",
+					"spells_known": "9",
+					"spell_slots_per_spell_level": [
+						{ "level": "1", "slots": "4" },
+						{ "level": "2", "slots": "3" },
+						{ "level": "3", "slots": "3" },
+						{ "level": "4", "slots": "" },
+						{ "level": "5", "slots": "" },
+						{ "level": "6", "slots": "" },
+						{ "level": "7", "slots": "" },
+						{ "level": "8", "slots": "" },
+						{ "level": "9", "slots": "" }
+					],
+					"features": ["Countercharm", "Bard College feature"]
+				},
+				{
+					"level": "7",
+					"proficiency_bonus": "+3",
+					"cantrips_known": "3",
+					"spells_known": "10",
+					"spell_slots_per_spell_level": [
+						{ "level": "1", "slots": "4" },
+						{ "level": "2", "slots": "3" },
+						{ "level": "3", "slots": "3" },
+						{ "level": "4", "slots": "1" },
+						{ "level": "5", "slots": "" },
+						{ "level": "6", "slots": "" },
+						{ "level": "7", "slots": "" },
+						{ "level": "8", "slots": "" },
+						{ "level": "9", "slots": "" }
+					],
+					"features": [""]
+				},
+				{
+					"level": "8",
+					"proficiency_bonus": "+3",
+					"cantrips_known": "3",
+					"spells_known": "11",
+					"spell_slots_per_spell_level": [
+						{ "level": "1", "slots": "4" },
+						{ "level": "2", "slots": "3" },
+						{ "level": "3", "slots": "3" },
+						{ "level": "4", "slots": "2" },
+						{ "level": "5", "slots": "" },
+						{ "level": "6", "slots": "" },
+						{ "level": "7", "slots": "" },
+						{ "level": "8", "slots": "" },
+						{ "level": "9", "slots": "" }
+					],
+					"features": ["Ability Score Improvement"]
+				},
+				{
+					"level": "9",
+					"proficiency_bonus": "+4",
+					"cantrips_known": "3",
+					"spells_known": "12",
+					"spell_slots_per_spell_level": [
+						{ "level": "1", "slots": "4" },
+						{ "level": "2", "slots": "3" },
+						{ "level": "3", "slots": "3" },
+						{ "level": "4", "slots": "3" },
+						{ "level": "5", "slots": "1" },
+						{ "level": "6", "slots": "" },
+						{ "level": "7", "slots": "" },
+						{ "level": "8", "slots": "" },
+						{ "level": "9", "slots": "" }
+					],
+					"features": ["Song of Rest (d8)"]
+				},
+				{
+					"level": "10",
+					"proficiency_bonus": "+4",
+					"cantrips_known": "4",
+					"spells_known": "14",
+					"spell_slots_per_spell_level": [
+						{ "level": "1", "slots": "4" },
+						{ "level": "2", "slots": "3" },
+						{ "level": "3", "slots": "3" },
+						{ "level": "4", "slots": "3" },
+						{ "level": "5", "slots": "2" },
+						{ "level": "6", "slots": "" },
+						{ "level": "7", "slots": "" },
+						{ "level": "8", "slots": "" },
+						{ "level": "9", "slots": "" }
+					],
+					"features": ["Bardic Inspiration (d10)", "Expertise", "Magical Secrets"]
+				},
+				{
+					"level": "11",
+					"proficiency_bonus": "+4",
+					"cantrips_known": "4",
+					"spells_known": "15",
+					"spell_slots_per_spell_level": [
+						{ "level": "1", "slots": "4" },
+						{ "level": "2", "slots": "3" },
+						{ "level": "3", "slots": "3" },
+						{ "level": "4", "slots": "3" },
+						{ "level": "5", "slots": "2" },
+						{ "level": "6", "slots": "1" },
+						{ "level": "7", "slots": "" },
+						{ "level": "8", "slots": "" },
+						{ "level": "9", "slots": "" }
+					],
+					"features": [""]
+				},
+				{
+					"level": "12",
+					"proficiency_bonus": "+4",
+					"cantrips_known": "4",
+					"spells_known": "15",
+					"spell_slots_per_spell_level": [
+						{ "level": "1", "slots": "4" },
+						{ "level": "2", "slots": "3" },
+						{ "level": "3", "slots": "3" },
+						{ "level": "4", "slots": "3" },
+						{ "level": "5", "slots": "2" },
+						{ "level": "6", "slots": "1" },
+						{ "level": "7", "slots": "" },
+						{ "level": "8", "slots": "" },
+						{ "level": "9", "slots": "" }
+					],
+					"features": ["Ability Score Improvement"]
+				},
+				{
+					"level": "13",
+					"proficiency_bonus": "+5",
+					"cantrips_known": "4",
+					"spells_known": "16",
+					"spell_slots_per_spell_level": [
+						{ "level": "1", "slots": "4" },
+						{ "level": "2", "slots": "3" },
+						{ "level": "3", "slots": "3" },
+						{ "level": "4", "slots": "3" },
+						{ "level": "5", "slots": "2" },
+						{ "level": "6", "slots": "1" },
+						{ "level": "7", "slots": "1" },
+						{ "level": "8", "slots": "" },
+						{ "level": "9", "slots": "" }
+					],
+					"features": ["Song of Rest (d10)"]
+				},
+				{
+					"level": "14",
+					"proficiency_bonus": "+5",
+					"cantrips_known": "4",
+					"spells_known": "18",
+					"spell_slots_per_spell_level": [
+						{ "level": "1", "slots": "4" },
+						{ "level": "2", "slots": "3" },
+						{ "level": "3", "slots": "3" },
+						{ "level": "4", "slots": "3" },
+						{ "level": "5", "slots": "2" },
+						{ "level": "6", "slots": "1" },
+						{ "level": "7", "slots": "1" },
+						{ "level": "8", "slots": "" },
+						{ "level": "9", "slots": "" }
+					],
+					"features": ["Magical Secrets", "Bard College feature"]
+				},
+				{
+					"level": "15",
+					"proficiency_bonus": "+5",
+					"cantrips_known": "4",
+					"spells_known": "19",
+					"spell_slots_per_spell_level": [
+						{ "level": "1", "slots": "4" },
+						{ "level": "2", "slots": "3" },
+						{ "level": "3", "slots": "3" },
+						{ "level": "4", "slots": "3" },
+						{ "level": "5", "slots": "2" },
+						{ "level": "6", "slots": "1" },
+						{ "level": "7", "slots": "1" },
+						{ "level": "8", "slots": "1" },
+						{ "level": "9", "slots": "" }
+					],
+					"features": ["Bardic Inspiration (d12)"]
+				},
+				{
+					"level": "16",
+					"proficiency_bonus": "+5",
+					"cantrips_known": "4",
+					"spells_known": "19",
+					"spell_slots_per_spell_level": [
+						{ "level": "1", "slots": "4" },
+						{ "level": "2", "slots": "3" },
+						{ "level": "3", "slots": "3" },
+						{ "level": "4", "slots": "3" },
+						{ "level": "5", "slots": "2" },
+						{ "level": "6", "slots": "1" },
+						{ "level": "7", "slots": "1" },
+						{ "level": "8", "slots": "1" },
+						{ "level": "9", "slots": "" }
+					],
+					"features": ["Ability Score Improvement"]
+				},
+				{
+					"level": "17",
+					"proficiency_bonus": "+6",
+					"cantrips_known": "4",
+					"spells_known": "20",
+					"spell_slots_per_spell_level": [
+						{ "level": "1", "slots": "4" },
+						{ "level": "2", "slots": "3" },
+						{ "level": "3", "slots": "3" },
+						{ "level": "4", "slots": "3" },
+						{ "level": "5", "slots": "2" },
+						{ "level": "6", "slots": "1" },
+						{ "level": "7", "slots": "1" },
+						{ "level": "8", "slots": "1" },
+						{ "level": "9", "slots": "1" }
+					],
+					"features": ["Song of Rest (d12)"]
+				},
+				{
+					"level": "18",
+					"proficiency_bonus": "+6",
+					"cantrips_known": "4",
+					"spells_known": "22",
+					"spell_slots_per_spell_level": [
+						{ "level": "1", "slots": "4" },
+						{ "level": "2", "slots": "3" },
+						{ "level": "3", "slots": "3" },
+						{ "level": "4", "slots": "3" },
+						{ "level": "5", "slots": "3" },
+						{ "level": "6", "slots": "1" },
+						{ "level": "7", "slots": "1" },
+						{ "level": "8", "slots": "1" },
+						{ "level": "9", "slots": "1" }
+					],
+					"features": ["Magical Secrets"]
+				},
+				{
+					"level": "19",
+					"proficiency_bonus": "+6",
+					"cantrips_known": "4",
+					"spells_known": "22",
+					"spell_slots_per_spell_level": [
+						{ "level": "1", "slots": "4" },
+						{ "level": "2", "slots": "3" },
+						{ "level": "3", "slots": "3" },
+						{ "level": "4", "slots": "3" },
+						{ "level": "5", "slots": "3" },
+						{ "level": "6", "slots": "2" },
+						{ "level": "7", "slots": "1" },
+						{ "level": "8", "slots": "1" },
+						{ "level": "9", "slots": "1" }
+					],
+					"features": ["Ability Score Improvement"]
+				},
+				{
+					"level": "20",
+					"proficiency_bonus": "+6",
+					"cantrips_known": "4",
+					"spells_known": "22",
+					"spell_slots_per_spell_level": [
+						{ "level": "1", "slots": "4" },
+						{ "level": "2", "slots": "3" },
+						{ "level": "3", "slots": "3" },
+						{ "level": "4", "slots": "3" },
+						{ "level": "5", "slots": "3" },
+						{ "level": "6", "slots": "2" },
+						{ "level": "7", "slots": "2" },
+						{ "level": "8", "slots": "1" },
+						{ "level": "9", "slots": "1" }
+					],
+					"features": ["Superior Inspiration"]
+				}
+			],
+
+			"features": [
+				{
+					"name": "Spellcasting",
+					"feature": "You have learned to untangle and reshape the fabric of reality in harmony with your wishes and music. Your spells are part of your vast repertoire, magic that you can tune to different situations.",
+					"sub_features": [
+						"Cantrips",
+						"Spell Slots",
+						"Spells Known of 1st Level and Higher",
+						"Spellcasting Ability",
+						"Ritual Casting",
+						"Spellcasting Focus"
+					]
+				},
+				{ "name": "Bardic Inspiration (d6)", "feature": "" },
+				{ "name": "Jack of All Trades", "feature": "" },
+				{ "name": "Song of Rest (d12)", "feature": "" },
+				{ "name": "Cardinal College", "feature": "" },
+				{ "name": "Expertise", "feature": "" },
+				{ "name": "Ability Score Improvement", "feature": "" },
+				{ "name": "Font of Inspiration", "feature": "" },
+				{ "name": "Countercharm", "feature": "" },
+				{ "name": "Magical Secrets", "feature": "" },
+				{ "name": "Superior Inspiration", "feature": "" }
+			]
+		}
+	},
 	{ "name": "Cleric", "data": {} },
 	{ "name": "Druid", "data": {} },
 	{ "name": "Fighter", "data": {} },
