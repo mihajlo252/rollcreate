@@ -31,7 +31,7 @@ export const Campaigns = () => {
 	}, [filter]);
 
 	return (
-		<motion.section className="flex h-full w-full flex-col gap-20" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+		<motion.section className="flex h-full w-full flex-col gap-20" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
 			<Filter options={["all", "featured"]} setFilter={setFilter} setCampaigns={setCampaigns}/>
 
 			<h2 className="self-center text-5xl font-semibold text-primary">
