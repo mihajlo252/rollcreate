@@ -14,7 +14,6 @@ export const Create = () => {
 	const getClasses = async () => {
 		const res = await fetch("assets/dndData/Classes.json")
 		const data = await res.json();
-		console.log(data);
 		setClasses(data);
 	}
 
@@ -42,8 +41,6 @@ export const Create = () => {
 					bg="assets/images/background-soldier-portrait-sm.png"
 				/>
 			</button>
-			{/* <button onClick={getClasses}>Get classes</button>
-			<button onClick={() => console.log(classes)}> Print </button> */}
 		</motion.section>
 	);
 };

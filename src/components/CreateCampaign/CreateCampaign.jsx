@@ -20,7 +20,6 @@ export const CreateCampaign = () => {
   const handleCreateCampaign = async (e) => {
     e.preventDefault()
     const data = await submitCampaign(userData.user.id, name, map);
-    console.log(data);
     // await handleNavigate(data)
   };
 

@@ -59,7 +59,6 @@ export const CreateCharacter = () => {
 
 	useEffect(() => {
 		handleGetAllCampaigns();
-		console.log(state);
 	}, []);
 
 	return (
