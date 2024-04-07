@@ -79,11 +79,10 @@ export const CreateCharacter = () => {
 					Stats
 				</button>
 			</header>
+			{subPage === "class" && <Class classes={state} />}
+			{subPage === "race" && <Race />}
+			{subPage === "stats" && <Stats />}
 			<Form className="flex flex-col gap-2" onSubmit={(e) => handleSubmit(e)}>
-				{subPage === "class" && <Class classes={state} />}
-				{subPage === "race" && <Race />}
-				{subPage === "stats" && <Stats />}
-
 				<select onChange={handleSetCampaignId} className="select select-bordered w-full max-w-xs">
 					{campaigns.map((campaign) => (
 						<option key={campaign.id} value={campaign.id}>
