@@ -53,36 +53,38 @@ export const CreateCharacter = () => {
 	};
 
 	const handleSetSubPage = (e) => {
-		e.preventDefault()
+		e.preventDefault();
 		setSubPage(e.target.value);
-	}
+	};
 
 	useEffect(() => {
 		handleGetAllCampaigns();
 		console.log(state);
 	}, []);
 
-
-
 	return (
-		<motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex w-full flex-col items-center justify-center gap-20">
+		<motion.section
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			exit={{ opacity: 0 }}
+			className="flex w-full flex-col items-center justify-center gap-20"
+		>
 			<header className="flex gap-10">
-				<button value="race" className="btn btn-ghost" onClick={handleSetSubPage}>Race</button>
-				<button value="class" className="btn btn-ghost" onClick={handleSetSubPage}>Class</button>
-				<button value="stats" className="btn btn-ghost" onClick={handleSetSubPage}>Stats</button>
+				<button value="race" className="btn btn-ghost" onClick={handleSetSubPage}>
+					Race
+				</button>
+				<button value="class" className="btn btn-ghost" onClick={handleSetSubPage}>
+					Class
+				</button>
+				<button value="stats" className="btn btn-ghost" onClick={handleSetSubPage}>
+					Stats
+				</button>
 			</header>
-			{subPage === "class" && (
-				<Class classes={state} />
-			)}
-			{subPage === "race" && (
-				<Race />
-			)}
-			{subPage === "stats" && (
-				<Stats />
-			)}
-
-
 			<Form className="flex flex-col gap-2" onSubmit={(e) => handleSubmit(e)}>
+				{subPage === "class" && <Class classes={state} />}
+				{subPage === "race" && <Race />}
+				{subPage === "stats" && <Stats />}
+
 				<select onChange={handleSetCampaignId} className="select select-bordered w-full max-w-xs">
 					{campaigns.map((campaign) => (
 						<option key={campaign.id} value={campaign.id}>
@@ -94,7 +96,6 @@ export const CreateCharacter = () => {
 					Submit
 				</button>
 			</Form>
-			
 		</motion.section>
 	);
 };
