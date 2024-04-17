@@ -10,17 +10,9 @@ export const Create = () => {
 
 	const navigate = useNavigate()
 
-	const [classes, setClasses] = useState([]);
-	const getClasses = async () => {
-		const res = await fetch("assets/dndData/Classes.json")
-		const data = await res.json();
-		setClasses(data);
-	}
-
 
 	useEffect(() => {
 		dispatch(pageChange("create"));
-		getClasses();
 	}, []);
 
 	return (
@@ -29,7 +21,7 @@ export const Create = () => {
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 		>
-			<button onClick={() => navigate("./character", {state: classes})}>
+			<button onClick={() => navigate("./character")}>
 				<AnimatedCard
 					text="Create a character"
 					bg="assets/images/background-soldier-portrait-sm.png"

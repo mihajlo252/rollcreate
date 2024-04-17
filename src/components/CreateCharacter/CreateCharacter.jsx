@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
-import { Form, useLocation } from "react-router-dom";
+import { Form } from "react-router-dom";
 import { submitCharacter } from "../../utilities/submitCharacter";
 import { getAllData } from "../../utilities/getAllData";
 import { useSelector } from "react-redux";
@@ -10,8 +10,6 @@ import { Stats } from "./Stats";
 
 export const CreateCharacter = () => {
 	const { userData } = useSelector((state) => state.userData);
-
-	const { state } = useLocation();
 
 	const [metaData, setMetaData] = useState({
 		name: "",
@@ -37,16 +35,16 @@ export const CreateCharacter = () => {
 	const [campaigns, setCampaigns] = useState([]);
 	const [campaignId, setCampaignId] = useState("");
 	const [subPage, setSubPage] = useState("race");
+	const [classes, setClasses] = useState([]);
+
+	
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		await submitCharacter(metaData, userData.user.id, campaignId);
 	};
 
-	const handleGetAllCampaigns = async () => {
-		const res = await getAllData("campaigns");
-		setCampaigns(res.data);
-	};
+	
 
 	const handleSetCampaignId = (e) => {
 		setCampaignId(e.target.value);
@@ -58,7 +56,19 @@ export const CreateCharacter = () => {
 	};
 
 	useEffect(() => {
-		handleGetAllCampaigns();
+		const getClasses = async () => {
+			const res = await fetch("assets/dndData/Classes.json")
+			const data = await res.json();
+			setClasses(data);
+		}
+		
+		const handleGetAllCampaigns = async () => {
+			const res = await getAllData("campaigns");
+			setCampaigns(res.data);
+		};
+		
+		// handleGetAllCampaigns();
+		getClasses();
 	}, []);
 
 	return (
@@ -79,17 +89,17 @@ export const CreateCharacter = () => {
 					Stats
 				</button>
 			</header>
-			{subPage === "class" && <Class classes={state} />}
+			{subPage === "class" && <Class classes={classes} />}
 			{subPage === "race" && <Race />}
 			{subPage === "stats" && <Stats />}
 			<Form className="flex flex-col gap-2" onSubmit={(e) => handleSubmit(e)}>
-				<select onChange={handleSetCampaignId} className="select select-bordered w-full max-w-xs">
+				{/* <select onChange={handleSetCampaignId} className="select select-bordered w-full max-w-xs">
 					{campaigns.map((campaign) => (
 						<option key={campaign.id} value={campaign.id}>
 							{campaign.campaign_name}
 						</option>
 					))}
-				</select>
+				</select> */}
 				<button type="submit" className="btn btn-primary">
 					Submit
 				</button>
