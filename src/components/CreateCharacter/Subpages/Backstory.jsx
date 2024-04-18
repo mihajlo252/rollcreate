@@ -25,6 +25,7 @@ export const Backstory = ({setMetaData}) => {
                 rows="15"
                 onChange={(e) => setBackstory(e.target.value)}
                 value={backstory}
+                placeholder="Write here..."
                 className="textarea textarea-bordered resize-none bg-[#09080D] bg-opacity-70"
             ></textarea>
         </motion.section>
