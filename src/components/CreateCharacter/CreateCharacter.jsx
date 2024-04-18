@@ -4,9 +4,10 @@ import { Form } from "react-router-dom";
 import { submitCharacter } from "../../utilities/submitCharacter";
 import { getAllData } from "../../utilities/getAllData";
 import { useSelector } from "react-redux";
-import { Class } from "./Class";
-import { Race } from "./Race";
-import { Stats } from "./Stats";
+import { Class } from "./Subpages/Class";
+import { Race } from "./Subpages/Race";
+import { Stats } from "./Subpages/Stats";
+import { Backstory } from "./Subpages/Backstory";
 
 export const CreateCharacter = () => {
 	const { userData } = useSelector((state) => state.userData);
@@ -88,10 +89,14 @@ export const CreateCharacter = () => {
 				<button value="stats" className="btn btn-ghost" onClick={handleSetSubPage}>
 					Stats
 				</button>
+				<button value="backstory" className="btn btn-ghost" onClick={handleSetSubPage}>
+					Backstory
+				</button>
 			</header>
 			{subPage === "class" && <Class classes={classes} />}
 			{subPage === "race" && <Race />}
 			{subPage === "stats" && <Stats />}
+			{subPage === "backstory" && <Backstory setMetaData={setMetaData}/>}
 			<Form className="flex flex-col gap-2" onSubmit={(e) => handleSubmit(e)}>
 				{/* <select onChange={handleSetCampaignId} className="select select-bordered w-full max-w-xs">
 					{campaigns.map((campaign) => (
