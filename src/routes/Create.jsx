@@ -5,9 +5,9 @@ import { pageChange } from "../redux/page";
 import { useNavigate, useOutletContext } from "react-router-dom";
 import { AnimatedCard } from "../components/AnimatedCard/AnimatedCard";
 import { InDevelopment } from "../components/InDevelopment/InDevelopment";
-const development = import.meta.env.VITE_DEVELOPMENT_MODE || false;
 
 export const Create = () => {
+	const development = import.meta.env.VITE_DEVELOPMENT_MODE || false;
     const { dispatch } = useOutletContext();
 
     const navigate = useNavigate();
