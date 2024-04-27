@@ -22,14 +22,14 @@ export const CreateCharacter = () => {
 			sub: "",
 			main: "",
 		},
-		stats: {
-			cha: "",
-			con: "",
-			dex: "",
-			int: "",
-			str: "",
-			wis: "",
-		},
+		stats: [
+			{name: "con", value: 0, mod: "", save: ""},
+			{name: "dex", value: 0, mod: "", save: ""},
+			{name: "cha", value: 0, mod: "", save: ""},
+			{name: "int", value: 0, mod: "", save: ""},
+			{name: "str", value: 0, mod: "", save: ""},
+			{name: "wis", value: 0, mod: "", save: ""}
+		],
 		backstory: "",
 		affiliation: "",
 	});
@@ -42,7 +42,8 @@ export const CreateCharacter = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		await submitCharacter(metaData, userData.user.id, campaignId);
+		// Commented to prevent api calls
+		// await submitCharacter(metaData, userData.user.id, campaignId);
 	};
 
 	
@@ -67,7 +68,7 @@ export const CreateCharacter = () => {
 			const res = await getAllData("campaigns");
 			setCampaigns(res.data);
 		};
-		
+		// Commented to prevent api calls
 		// handleGetAllCampaigns();
 		getClasses();
 	}, []);
@@ -93,18 +94,19 @@ export const CreateCharacter = () => {
 					Backstory
 				</button>
 			</header>
-			{subPage === "class" && <Class classes={classes} />}
+			{subPage === "class" && <Class classes={classes} setMetaData={setMetaData} />}
 			{subPage === "race" && <Race />}
-			{subPage === "stats" && <Stats />}
+			{subPage === "stats" && <Stats metaData={metaData} setMetaData={setMetaData}/>}
 			{subPage === "backstory" && <Backstory setMetaData={setMetaData}/>}
 			<Form className="flex flex-col gap-2" onSubmit={(e) => handleSubmit(e)}>
-				{/* <select onChange={handleSetCampaignId} className="select select-bordered w-full max-w-xs">
-					{campaigns.map((campaign) => (
+				<select onChange={handleSetCampaignId} className="select select-bordered w-full max-w-xs">
+					{/* Commented to prevent api calls */}
+					{/* {campaigns.map((campaign) => (
 						<option key={campaign.id} value={campaign.id}>
 							{campaign.campaign_name}
 						</option>
-					))}
-				</select> */}
+					))} */}
+				</select>
 				<button type="submit" className="btn btn-primary">
 					Submit
 				</button>

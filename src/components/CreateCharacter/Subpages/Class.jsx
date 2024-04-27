@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-export const Class = ({ classes }) => {
+export const Class = ({ classes, setMetaData }) => {
 	const [selectedClass, setSelectedClass] = useState("Barbarian");
 	const [selectedClassData, setSelectedClassData] = useState({});
 
@@ -9,6 +9,7 @@ export const Class = ({ classes }) => {
 
 	useEffect(() => {
 		setSelectedClassData(classes.find((item) => item.name === selectedClass));
+		setMetaData((prev) => ({ ...prev, class: { ...prev.class, main: selectedClass } }));
 	}, [selectedClass]);
 
 	return (

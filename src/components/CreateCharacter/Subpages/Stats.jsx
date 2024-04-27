@@ -1,24 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
-export const Stats = () => {
-	const [stats, setStats] = useState([
-		{ stat: "cha", value: 0 },
-		{ stat: "con", value: 0 },
-		{ stat: "dex", value: 0 },
-		{ stat: "int", value: 0 },
-		{ stat: "str", value: 0 },
-		{ stat: "wis", value: 0 },
-	]);
-
+export const Stats = ({metaData, setMetaData}) => {
+	
 
 
 	const rollDie = (stat) => {
-		setStats(stats.map((s) => (s.stat === stat.stat ? { ...s, value: Math.floor(Math.random() * 20) } : s)));
+		// setStats(stats.map((s) => (s.stat === stat.stat ? { ...s, value: Math.floor(Math.random() * 20).toString() } : s)));
+		setMetaData((prev) => ({ ...prev, stats: prev.stats.map((s) => (s.name === stat.name ? { ...s, value: Math.floor(Math.random() * 20).toString() } : s)) }));
 	};
-	const rollAll = () => {
-		setStats(stats.map((s) => ({ ...s, value: Math.floor(Math.random() * 20) })));
-	};
+	// const rollAll = () => {
+	// 	setStats(stats.map((s) => ({ ...s, value: Math.floor(Math.random() * 20).toString() })));
+	// };
+
+
+
+	// useEffect(() => {
+	// 	setMetaData((prev) => ({ ...prev, stats: [...stats] }));
+	// }, [stats])
 
 	return (
 		<motion.section
@@ -28,9 +27,9 @@ export const Stats = () => {
 			exit={{ opacity: 0 }}
 		>
 			<div className="flex gap-2">
-				{stats.map((stat) => (
-					<div key={stat.stat} className="grid">
-						<label>{stat.stat}</label>
+				{metaData.stats.map((stat) => (
+					<div key={stat.name} className="grid">
+						<label>{stat.name}</label>
 						<input value={stat.value} className="text-neutral-content" readOnly></input>
 						<button className="btn btn-ghost mt-2" onClick={() => rollDie(stat)}>
 							ROLL
@@ -38,9 +37,9 @@ export const Stats = () => {
 					</div>
 				))}
 			</div>
-			<button className="btn btn-ghost mt-2" onClick={() => rollAll()}>
+			{/* <button className="btn btn-ghost mt-2" onClick={() => rollAll()}>
 				ROLL ALL
-			</button>
+			</button> */}
 		</motion.section>
 	);
 };
