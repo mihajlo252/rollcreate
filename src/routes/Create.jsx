@@ -7,7 +7,7 @@ import { AnimatedCard } from "../components/AnimatedCard/AnimatedCard";
 import { InDevelopment } from "../components/InDevelopment/InDevelopment";
 
 export const Create = () => {
-	const development = import.meta.env.VITE_DEVELOPMENT_MODE || false;
+	const development = true
     const { dispatch } = useOutletContext();
 
     const navigate = useNavigate();
@@ -16,7 +16,7 @@ export const Create = () => {
         dispatch(pageChange("create"));
     }, []);
 
-	if(!development) return <InDevelopment />
+	if(development) return <InDevelopment />
 
     return (
         <motion.section
