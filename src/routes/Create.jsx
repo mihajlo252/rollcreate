@@ -7,7 +7,7 @@ import { AnimatedCard } from "../components/AnimatedCard/AnimatedCard";
 import { InDevelopment } from "../components/InDevelopment/InDevelopment";
 
 export const Create = () => {
-	const development = true
+	const development = false
     const { dispatch } = useOutletContext();
 
     const navigate = useNavigate();

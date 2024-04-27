@@ -10,6 +10,8 @@ export const Class = ({ classes, setMetaData }) => {
 	useEffect(() => {
 		setSelectedClassData(classes.find((item) => item.name === selectedClass));
 		setMetaData((prev) => ({ ...prev, class: { ...prev.class, main: selectedClass } }));
+		// setMetaData((prev) => ({ ...prev, stats: prev.stats.map((s) => (s.name === stat.name ? { ...s, value: Math.floor(Math.random() * 20).toString() } : s)) })));
+		console.log(selectedClassData);
 	}, [selectedClass]);
 
 	return (
