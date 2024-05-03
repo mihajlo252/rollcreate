@@ -55,8 +55,6 @@ export const SignIn = () => {
                     id="signin_form"
                     name="signin_form"
                     onSubmit={(e) => handleSignIn(e)}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
                 >
                     <h1 className="self-center text-5xl font-bold text-primary">
                         Sign In

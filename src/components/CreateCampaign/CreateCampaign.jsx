@@ -12,34 +12,36 @@ export const CreateCampaign = () => {
     const navigate = useNavigate();
 
     const handleNavigate = async (data) => {
-      const reroute = `/campaigns`
-      navigate(reroute)
-    }
+        const reroute = `/campaigns`;
+        navigate(reroute);
+    };
 
     const handleCreateCampaign = async (e) => {
         e.preventDefault();
         const data = await submitCampaign(userData.user.id, name, map);
-        await handleNavigate(data)
+        await handleNavigate(data);
     };
 
     return (
         <motion.section
-            className="flex h-min w-full flex-col items-center justify-center gap-20 pt-20"
+            className="flex w-full items-center gap-20 pb-20 pt-0"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
         >
-            <div className="flex flex-col gap-20 rounded-[15px] bg-[#09080D] bg-opacity-70 px-20 py-16">
-                <h2 className="text-5xl text-primary">Create Campaign</h2>
+            <div className="card w-full max-w-sm shrink-0 bg-[#0e0d14] bg-opacity-70 shadow-2xl">
                 <Form
-                    className="flex flex-col gap-5"
+                    className="card-body gap-10"
                     onSubmit={handleCreateCampaign}
                 >
+                    <h2 className="text-5xl text-primary">Create Campaign</h2>
                     <div className="flex flex-col gap-2">
                         <label htmlFor="name">Name your campaign:</label>
                         <input
                             type="text"
                             id="name"
                             value={name}
+                            autoFocus
+                            autoComplete="on"
                             onChange={(e) => setName(e.target.value)}
                             placeholder="Indispensables"
                         />
@@ -48,6 +50,7 @@ export const CreateCampaign = () => {
                         <label htmlFor="map">Upload your map:</label>
                         <input
                             type="file"
+                            id="map"
                             onChange={(e) => setMap(e.target.files[0])}
                         />
                     </div>
