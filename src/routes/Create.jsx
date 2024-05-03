@@ -18,16 +18,17 @@ export const Create = () => {
 
     return (
         <motion.section
-            className="flex w-full items-center justify-center"
+            className="flex h-min w-full flex-col items-center justify-center gap-20 lg:gap-44"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
         >
+            <h1 className="text-center text-[2.8rem] text-primary">Choose what you want to build</h1>
             <div className="grid h-min w-full gap-10 max-[1000px]:grid-rows-2 min-[1000px]:grid-cols-2">
                 <CreateCard to="./character">
-                    <h2 className="place-self-center text-5xl text-primary">
+                    <h2 className="place-self-center text-center text-5xl text-primary">
                         Create your character!
                     </h2>
-                    <p className="text-neutral">
+                    <p className="text-center text-neutral">
                         Here you will be able to choose between a plethora of
                         customization options. Want to be a heroic knight or an
                         evil mage? You got it! If you think it, you can probably
@@ -35,10 +36,10 @@ export const Create = () => {
                     </p>
                 </CreateCard>
                 <CreateCard to="./campaign">
-                    <h2 className="place-self-center text-5xl text-primary">
+                    <h2 className="place-self-center text-center text-5xl text-primary">
                         Create your campaign!
                     </h2>
-                    <p className="text-neutral">
+                    <p className="text-center text-neutral">
                         Make your dream world come to life. Have fun building
                         and exploring your ideas with us!
                     </p>
