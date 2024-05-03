@@ -22,22 +22,21 @@ export const Create = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
         >
-            <h1 className="text-center text-[2.8rem] text-primary">Choose what you want to build</h1>
+            <h1 className="text-center text-[2.8rem] text-primary">Choose what you want to create</h1>
             <div className="grid h-min w-full gap-10 max-[1000px]:grid-rows-2 min-[1000px]:grid-cols-2">
                 <CreateCard to="./character">
                     <h2 className="place-self-center text-center text-5xl text-primary">
-                        Create your character!
+                        Create your character
                     </h2>
                     <p className="text-center text-neutral">
-                        Here you will be able to choose between a plethora of
-                        customization options. Want to be a heroic knight or an
-                        evil mage? You got it! If you think it, you can probably
+                        Want to be a heroic knight or an
+                        evil warlock? You got it! If you think it, you can probably
                         build it. The world is your oyster!
                     </p>
                 </CreateCard>
                 <CreateCard to="./campaign">
                     <h2 className="place-self-center text-center text-5xl text-primary">
-                        Create your campaign!
+                        Create your campaign
                     </h2>
                     <p className="text-center text-neutral">
                         Make your dream world come to life. Have fun building
