@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+*, *::before, *::after {
 	box-sizing: border-box;
 }
 
