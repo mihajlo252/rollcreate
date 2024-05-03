@@ -12,7 +12,7 @@ export const Root = () => {
 		<>
 			<Navigation />
 			<main
-				className={`jusify-center relative flex min-h-[100svh] px-[12rem] pb-20 pt-20 max-[600px]:px-[2rem] max-[600px]:pt-36`}
+				className={`jusify-center relative flex min-h-[100svh] px-[2rem] pb-20 pt-20 max-[600px]:pt-36 md:px-[6rem] lg:px-[12rem]`}
 			>
 				<Outlet context={{ dispatch }} />
 			</main>
