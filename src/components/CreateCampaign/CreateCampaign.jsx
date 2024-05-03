@@ -33,7 +33,7 @@ export const CreateCampaign = () => {
                     className="card-body gap-10"
                     onSubmit={handleCreateCampaign}
                 >
-                    <h2 className="text-5xl text-primary">Create Campaign</h2>
+                    <h2 className="text-center text-5xl text-primary">Create Campaign</h2>
                     <div className="flex flex-col gap-2">
                         <label htmlFor="name">Name your campaign:</label>
                         <input
@@ -50,9 +50,10 @@ export const CreateCampaign = () => {
                         <label htmlFor="map">Upload your map:</label>
                         <input
                             type="file"
-                            id="map"
+                            id="map"                
                             onChange={(e) => setMap(e.target.files[0])}
                         />
+                        <p className="text-secondary">please keep the image dimensions within 1300x800</p>
                     </div>
                     <button className="btn btn-primary">Create</button>
                 </Form>
