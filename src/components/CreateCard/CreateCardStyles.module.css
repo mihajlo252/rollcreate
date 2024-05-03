@@ -1,0 +1,27 @@
+.card {
+    padding-inline: 5rem;
+    padding-block: 3rem;
+}
+
+.card > p {
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+}
+.card > h2 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+@media (max-width: 1400px) {
+    .card {
+        padding-inline: 2rem;
+        padding-block: 2rem;
+    }
+}
+@media (max-width: 1000px) {
+
+    .card > p {
+        font-size: clamp(1rem, 1.5vw, 1.5rem);
+    }
+    .card > h2 {
+        font-size: clamp(1.7rem, 2vw, 3rem);
+    }
+}
