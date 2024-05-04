@@ -8,9 +8,12 @@ import { Class } from "./Subpages/Class";
 import { Race } from "./Subpages/Race";
 import { Stats } from "./Subpages/Stats";
 import { Backstory } from "./Subpages/Backstory";
+import { InDevelopment } from "../InDevelopment/InDevelopment";
 
 export const CreateCharacter = () => {
 	const { userData } = useSelector((state) => state.userData);
+
+	const inDevelopment = true;
 
 	const [metaData, setMetaData] = useState({
 		name: "",
@@ -72,6 +75,8 @@ export const CreateCharacter = () => {
 		// handleGetAllCampaigns();
 		getClasses();
 	}, []);
+
+	if(inDevelopment) return <InDevelopment />
 
 	return (
 		<motion.section
