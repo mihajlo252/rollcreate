@@ -40,7 +40,7 @@ export const Create = () => {
                         and exploring your ideas with us!
                     </p>
                 </CreateCard>
-                <CreateCard to="./character" inDevelopment={true}>
+                <CreateCard to="./character">
                     <h2 className="place-self-center text-center text-5xl text-primary">
                         Create your character
                     </h2>
