@@ -7,19 +7,20 @@ import { useSelector } from "react-redux";
 export const CreateCampaign = () => {
     const [name, setName] = useState("");
     const [map, setMap] = useState();
+    const [description, setDescription] = useState();
 
     const { userData } = useSelector((state) => state.userData);
     const navigate = useNavigate();
 
-    const handleNavigate = async (data) => {
+    const handleNavigate = async () => {
         const reroute = `/campaigns`;
         navigate(reroute);
     };
 
     const handleCreateCampaign = async (e) => {
         e.preventDefault();
-        const data = await submitCampaign(userData.user.id, name, map);
-        await handleNavigate(data);
+        const _ = await submitCampaign(userData.user.id, name, map, description);
+        await handleNavigate();
     };
 
     return (
@@ -30,11 +31,11 @@ export const CreateCampaign = () => {
         >
             <div className="card w-full max-w-sm shrink-0 bg-[#0e0d14] bg-opacity-70 shadow-2xl">
                 <Form
-                    className="card-body gap-10"
+                    className="card-body gap-5"
                     onSubmit={handleCreateCampaign}
                 >
                     <h2 className="text-center text-5xl text-primary">Create Campaign</h2>
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-2 pt-10">
                         <label htmlFor="name">Name your campaign:</label>
                         <input
                             type="text"
@@ -47,6 +48,15 @@ export const CreateCampaign = () => {
                         />
                     </div>
                     <div className="flex flex-col gap-2">
+                        <label htmlFor="map">Upload your description:</label>
+                        <input
+                            type="file"
+                            id="description"                
+                            onChange={(e) => setDescription(e.target.files[0])}
+                        />
+                        <p className="text-secondary">Upload a .md file</p>
+                    </div>
+                    <div className="flex flex-col gap-2 pb-5">
                         <label htmlFor="map">Upload your map:</label>
                         <input
                             type="file"
