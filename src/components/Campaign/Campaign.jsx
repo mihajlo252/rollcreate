@@ -43,9 +43,7 @@ export const Campaign = () => {
             animate={{ opacity: 1 }}
         >
             <h2 className="text-5xl text-warning">Nothing to see here!</h2>
-        </motion.section>
-
-        
+        </motion.section>        
     )
 
     return (

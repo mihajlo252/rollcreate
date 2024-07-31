@@ -7,15 +7,10 @@ export const CampaignDescription = ({ state }) => {
     const [desc, setDesc] = useState("");
     const [updatedDesc, setUpdatedDesc] = useState({});
     const { userData } = useSelector((state) => state.userData);
-    
-    // const Foo = async () => {
-    //     setDesc(await updatedDesc.text())
-    // }
-
 
     const updateDescription = async () => {
         const parsedDesc = await updatedDesc.text();
-        const { data, error } = await supabase
+        const { error } = await supabase
             .from("campaigns")
             .update({ campaign_description:  parsedDesc})
             .eq("id", state.id);
@@ -25,8 +20,6 @@ export const CampaignDescription = ({ state }) => {
             }
             setDesc(parsedDesc);
     };
-
-    
 
     useEffect(() => {
         (async () => {
