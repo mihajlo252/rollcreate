@@ -74,7 +74,7 @@ export const CampaignDescription = ({ state }) => {
                     overrides: {
                         h1: {
                             component: (props) => (
-                                <h1 className="mb-10 text-5xl font-bold text-secondary max-[700px]:text-4xl">
+                                <h1 className="mb-10 text-5xl font-bold text-primary max-[700px]:text-4xl">
                                     {props.children}
                                 </h1>
                             ),
