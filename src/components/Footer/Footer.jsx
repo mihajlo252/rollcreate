@@ -33,10 +33,10 @@ export const Footer = () => {
                   <span>
                     Development on the new project began in 2024 and is nearing it's first iteration. Key insights and lessons from this original version have
                     been carried over into the new system. Please feel free to explore the new project for the latest updates and continued work {" "}
-                    <a href="https://thescrollforge.netlify.app" target="_blank" className="link text-primary">
+                    <a href="https://https://github.com/mihajlo252/the-scrollforge" target="_blank" className="link text-primary">
                       here
                     </a>
-                    .
+                    and see the current version <a href="https://thescrollforge.netlify.app" target="_blank" className="link text-primary">here</a>.
                   </span>
                   <span className="text-sm text-secondary">This project remains available for reference purposes.</span>
                 </p>
