@@ -31,7 +31,7 @@ export const Footer = () => {
                     character sheets and creation — not just for D&D, but with support for other TTRPGs planned in the future.
                   </span>
                   <span>
-                    Development on the new project began in 2024 and is nearing completion. Key insights and lessons from this original version have
+                    Development on the new project began in 2024 and is nearing it's first iteration. Key insights and lessons from this original version have
                     been carried over into the new system. Please feel free to explore the new project for the latest updates and continued work {" "}
                     <a href="https://thescrollforge.netlify.app" target="_blank" className="link text-primary">
                       here
