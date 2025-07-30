@@ -1,4 +1,4 @@
-⚠️ Project Archived
+# ⚠️ Project Archived
 
 This project is no longer actively maintained. It began as a personal tool for managing Dungeons & Dragons campaigns, with a secondary feature for character creation. Over time, the focus shifted toward building a more robust and dedicated system for character sheets and creation — not just for D&D, but with support for other TTRPGs planned in the future.
 
