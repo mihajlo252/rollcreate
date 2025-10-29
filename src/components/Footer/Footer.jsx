@@ -38,7 +38,7 @@ export const Footer = () => {
                     </a> {" "}
                     and see the current version <a href="https://thescrollforge.netlify.app" target="_blank" className="link text-primary">here</a>.
                   </span>
-                  <span className="text-sm text-secondary">This project remains available for reference purposes.</span>
+                  <span className="text-sm text-secondary">This project remains available for reference purposes. It is no longer functional.</span>
                 </p>
               </div>
             </Popup>
